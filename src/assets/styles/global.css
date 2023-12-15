@@ -18,7 +18,7 @@ p,
 span,
 button,
 a {
-  font-family: system-ui, Roboto, sans-serif;
+  font-family: var(--roboto);
 }
 
 a {
