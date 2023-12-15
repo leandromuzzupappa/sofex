@@ -1,0 +1,30 @@
+.text {
+}
+
+[data-align="left"] {
+  text-align: left;
+}
+
+[data-align="center"] {
+  text-align: center;
+}
+
+[data-align="right"] {
+  text-align: right;
+}
+
+[data-align="justify"] {
+  text-align: justify;
+}
+
+[data-font-weight="regular"] {
+  font-weight: 400;
+}
+
+[data-font-weight="semi-bold"] {
+  font-weight: 600;
+}
+
+[data-font-weight="bold"] {
+  font-weight: 700;
+}
