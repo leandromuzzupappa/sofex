@@ -1,0 +1,22 @@
+.heading {
+}
+
+[data-font-family="roboto"] {
+  font-family: var(--roboto);
+}
+
+[data-font-family="changa"] {
+  font-family: var(--changa);
+}
+
+[data-font-weight="regular"] {
+  font-weight: 400;
+}
+
+[data-font-weight="semi-bold"] {
+  font-weight: 600;
+}
+
+[data-font-weight="bold"] {
+  font-weight: 700;
+}
