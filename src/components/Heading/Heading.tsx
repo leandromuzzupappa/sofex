@@ -1,6 +1,5 @@
 import styles from "./Heading.module.css";
-type Font = "roboto" | "changa";
-type FontWeight = "regular" | "semi-bold" | "bold";
+import { Font, FontWeight } from "@data/types/Font";
 
 interface IHeadingProps {
   text: string;
