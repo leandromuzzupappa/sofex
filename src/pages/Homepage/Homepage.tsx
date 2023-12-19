@@ -18,37 +18,11 @@ export const Homepage = () => {
       />
       <Button
         text="Conocenos"
-        icon={IconNames.LEFTARROW}
-        iconPosition="right"
         loading={loading}
         onclick={() => setLoading(!loading)}
         color="teal"
-      />
-      <br />
-      <Button
-        text="Conocenos"
-        icon={IconNames.LEFTARROW}
-        iconPosition="right"
         variant="outlined"
-        theme="secondary"
-      />
-      <br />
-      <Button
-        text="Conocenos"
-        icon={IconNames.RIGHTARROW}
-        iconPosition="right"
-        variant="filled"
-        color="white"
-        loading={loading}
-      />
-      <br />
-      <Button
-        text="Conocenos"
         icon={IconNames.DOWNARROW}
-        iconPosition="left"
-        href="#"
-        color="teal"
-        underline
       />
     </div>
   );

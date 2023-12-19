@@ -3,7 +3,7 @@ import { LeftArrow, DownArrow, RightArrow } from "@components/Icon/ArrowIcons";
 export interface IIconProps {
   name: IconNames;
   classList?: string;
-  loading?: boolean;
+  selfRef?: React.RefObject<HTMLSpanElement>;
 }
 
 export enum IconNames {

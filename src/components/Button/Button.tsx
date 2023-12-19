@@ -1,3 +1,5 @@
+import { useRef, useLayoutEffect } from "react";
+import { gsap } from "gsap";
 import { Icon } from "@components/Icon/Icon";
 import styles from "./Button.module.css";
 import { IconNames } from "@data/interfaces/Icons";
@@ -38,13 +40,69 @@ export const Button = ({
   onclick,
 }: IButtonProps): React.ReactElement<IButtonProps> => {
   const Tag = href ? "a" : "button";
+  const loadingRef = useRef<HTMLDivElement>(null);
+  const iconRef = useRef<HTMLSpanElement>(null);
+
+  useLayoutEffect(() => {
+    const tl = gsap.timeline({ paused: true });
+
+    if (loading) {
+      if (iconRef.current) {
+        tl.to(iconRef.current, {
+          autoAlpha: 0,
+          scale: 0,
+          display: "none",
+          duration: 0.2,
+          ease: "expo.out",
+        });
+      }
+
+      tl.to(
+        loadingRef.current,
+        {
+          autoAlpha: 1,
+          display: "block",
+          duration: 0.2,
+          ease: "power4.inOut",
+        },
+        "-=.2",
+      );
+    } else {
+      tl.to(loadingRef.current, {
+        autoAlpha: 0,
+        display: "none",
+        duration: 0.2,
+        ease: "power3.inOut",
+      });
+
+      if (iconRef.current) {
+        tl.to(
+          iconRef.current,
+          {
+            autoAlpha: 1,
+            scale: 1,
+            display: "block",
+            duration: 0.2,
+            ease: "expo.out",
+          },
+          "-=0.2",
+        );
+      }
+    }
+
+    tl.play();
+
+    return () => {
+      tl.kill();
+    };
+  }, [loading]);
 
   const renderIcon = () => {
-    return <Icon name={icon!} classList={iconClassList} />;
+    return <Icon selfRef={iconRef} name={icon!} classList={iconClassList} />;
   };
 
   const renderLoading = () => {
-    return <span className={styles.spinner}></span>;
+    return <div ref={loadingRef} className={styles.spinner}></div>;
   };
 
   return (
@@ -61,9 +119,11 @@ export const Button = ({
       {...(href && { href })}
       onClick={onclick}
     >
-      {loading && renderLoading()}
       {icon && iconPosition === "left" && renderIcon()}
-      {text}
+      <span>
+        {renderLoading()}
+        {text}
+      </span>
       {icon && iconPosition === "right" && renderIcon()}
     </Tag>
   );

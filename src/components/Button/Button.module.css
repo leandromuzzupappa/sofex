@@ -14,8 +14,14 @@
   gap: 0.25rem;
   justify-content: center;
   padding: var(--padding-block) var(--padding-inline);
-  transition: background 0.15s ease-in-out;
+  transition:
+    background 0.15s ease-in-out,
+    padding 0.15s ease-in-out;
   width: max-content;
+}
+
+.button > span {
+  position: relative;
 }
 
 [data-shape="rounded"] {
@@ -63,9 +69,7 @@
 }
 
 [data-loading="true"] {
-  .icon {
-    opacity: 0.5;
-  }
+  padding-inline-start: calc(var(--padding-inline) + 2rem);
 }
 
 .spinner {
@@ -76,11 +80,14 @@
   aspect-ratio: 1;
   background: var(--btn-color);
   border-radius: 50%;
+  display: none;
+  left: -1.5rem;
   mask: var(--spinner-mask);
   -webkit-mask: var(--spinner-mask);
   mask-composite: subtract;
   -webkit-mask-composite: source-out;
   padding: 3px;
+  position: absolute;
   width: 16px;
 }
 
