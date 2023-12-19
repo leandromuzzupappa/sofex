@@ -1,0 +1,45 @@
+.button {
+  --padding-block: 1.125rem;
+  --padding-inline: 1.4rem;
+
+  align-items: center;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.125rem;
+  font-weight: 500;
+  gap: 0.25rem;
+  justify-content: center;
+  padding: var(--padding-block) var(--padding-inline);
+  transition: background 0.15s ease-in-out;
+  width: max-content;
+}
+
+[data-shape="rounded"] {
+  border-radius: 1.875rem;
+}
+
+[data-variant="outlined"] {
+  border: 0.187rem solid var(--clr-green-450);
+}
+
+[data-variant="filled"] {
+  background: var(--clr-green-100);
+}
+
+[data-block] {
+  width: 100%;
+}
+
+.button:hover {
+  &[data-shape="rounded"] {
+    background: var(--clr-green-100);
+  }
+}
+
+.button:active {
+  &[data-shape="rounded"] {
+    background: var(--clr-green-450);
+  }
+}
