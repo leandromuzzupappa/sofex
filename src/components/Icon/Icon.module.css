@@ -1,0 +1,9 @@
+.icon {
+  display: inline-block;
+  position: relative;
+  transition: 0.1s ease-in-out;
+}
+
+.icon[data-loading] {
+  transform: scale(0);
+}
