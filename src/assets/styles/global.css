@@ -19,6 +19,7 @@ span,
 button,
 a {
   font-family: var(--roboto);
+  color: var(--clr-neutral-900);
 }
 
 a {
