@@ -1,10 +1,12 @@
 .button {
   --padding-block: 1.125rem;
   --padding-inline: 1.4rem;
+  --btn-color: var(--clr-neutral-900);
 
   align-items: center;
   background: transparent;
   border: 0;
+  color: var(--btn-color);
   cursor: pointer;
   display: flex;
   font-size: 1.125rem;
@@ -45,23 +47,41 @@
 }
 
 [data-color="white"] {
-  color: var(--clr-neutral-100);
-}
-
-[data-color="black"] {
-  color: var(--clr-neutral-900);
+  --btn-color: var(--clr-neutral-100);
 }
 
 [data-color="grey"] {
-  color: var(--clr-neutral-500);
+  --btn-color: var(--clr-neutral-500);
 }
 
 [data-color="green"] {
-  color: var(--clr-green-450);
+  --btn-color: var(--clr-green-450);
 }
 
 [data-color="teal"] {
-  color: var(--clr-green-700);
+  --btn-color: var(--clr-green-700);
+}
+
+[data-loading="true"] {
+  .icon {
+    opacity: 0.5;
+  }
+}
+
+.spinner {
+  --spinner-mask: conic-gradient(#0000 10%, #000),
+    linear-gradient(#000 0 0) content-box;
+
+  animation: loadingAnimation 1s infinite linear;
+  aspect-ratio: 1;
+  background: var(--btn-color);
+  border-radius: 50%;
+  mask: var(--spinner-mask);
+  -webkit-mask: var(--spinner-mask);
+  mask-composite: subtract;
+  -webkit-mask-composite: source-out;
+  padding: 3px;
+  width: 16px;
 }
 
 /* events */
@@ -78,5 +98,11 @@
 .button:active {
   &[data-shape="rounded"] {
     background: var(--clr-green-450);
+  }
+}
+
+@keyframes loadingAnimation {
+  to {
+    transform: rotate(1turn);
   }
 }

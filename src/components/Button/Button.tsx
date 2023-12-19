@@ -1,4 +1,6 @@
+import { Icon } from "@components/Icon/Icon";
 import styles from "./Button.module.css";
+import { IconNames } from "@data/interfaces/Icons";
 
 interface IButtonProps {
   block?: boolean;
@@ -6,7 +8,7 @@ interface IButtonProps {
   color?: "white" | "black" | "grey" | "green" | "teal";
   disabled?: boolean;
   href?: string;
-  icon?: string;
+  icon?: IconNames;
   iconPosition?: "left" | "right";
   iconClassList?: string;
   loading?: boolean;
@@ -20,7 +22,7 @@ interface IButtonProps {
 
 export const Button = ({
   block = false,
-  classList,
+  classList = "",
   color = "black",
   disabled,
   href,
@@ -38,7 +40,11 @@ export const Button = ({
   const Tag = href ? "a" : "button";
 
   const renderIcon = () => {
-    return <img src={icon} alt="" className={iconClassList} data-hidden />;
+    return <Icon name={icon!} classList={iconClassList} />;
+  };
+
+  const renderLoading = () => {
+    return <span className={styles.spinner}></span>;
   };
 
   return (
@@ -55,6 +61,7 @@ export const Button = ({
       {...(href && { href })}
       onClick={onclick}
     >
+      {loading && renderLoading()}
       {icon && iconPosition === "left" && renderIcon()}
       {text}
       {icon && iconPosition === "right" && renderIcon()}
