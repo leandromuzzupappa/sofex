@@ -1,5 +1,7 @@
 @import "variables.css";
-
+html {
+  background-color: #FAFAFA;
+}
 *,
 *::before,
 *::after {
