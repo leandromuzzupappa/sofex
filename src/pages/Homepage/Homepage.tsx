@@ -20,6 +20,7 @@ export const Homepage = () => {
         icon={arrow}
         iconPosition="right"
         variant="outlined"
+        theme="secondary"
       />
       <br />
       <Button
@@ -27,6 +28,16 @@ export const Homepage = () => {
         icon={arrow}
         iconPosition="right"
         variant="filled"
+        color="white"
+      />
+      <br />
+      <Button
+        text="Conocenos"
+        icon={arrow}
+        iconPosition="left"
+        href="#"
+        color="teal"
+        underline
       />
     </div>
   );
