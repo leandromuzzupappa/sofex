@@ -30,7 +30,7 @@ export const Button = ({
   href,
   icon,
   iconPosition = "left",
-  iconClassList,
+  iconClassList = "",
   loading,
   shape = "rounded",
   text,
@@ -47,47 +47,9 @@ export const Button = ({
     const tl = gsap.timeline({ paused: true });
 
     if (loading) {
-      if (iconRef.current) {
-        tl.to(iconRef.current, {
-          autoAlpha: 0,
-          scale: 0,
-          display: "none",
-          duration: 0.2,
-          ease: "expo.out",
-        });
-      }
-
-      tl.to(
-        loadingRef.current,
-        {
-          autoAlpha: 1,
-          display: "block",
-          duration: 0.2,
-          ease: "power4.inOut",
-        },
-        "-=.2",
-      );
+      handleLoading({ tl, loadingRef, iconRef });
     } else {
-      tl.to(loadingRef.current, {
-        autoAlpha: 0,
-        display: "none",
-        duration: 0.2,
-        ease: "power3.inOut",
-      });
-
-      if (iconRef.current) {
-        tl.to(
-          iconRef.current,
-          {
-            autoAlpha: 1,
-            scale: 1,
-            display: "block",
-            duration: 0.2,
-            ease: "expo.out",
-          },
-          "-=0.2",
-        );
-      }
+      handleReverse({ tl, loadingRef, iconRef });
     }
 
     tl.play();
@@ -97,8 +59,76 @@ export const Button = ({
     };
   }, [loading]);
 
+  const handleLoading = ({
+    tl,
+    loadingRef,
+    iconRef,
+  }: {
+    tl: gsap.core.Timeline;
+    loadingRef: React.RefObject<HTMLDivElement>;
+    iconRef: React.RefObject<HTMLSpanElement>;
+  }) => {
+    if (iconRef.current) {
+      tl.to(iconRef.current, {
+        autoAlpha: 0,
+        scale: 0,
+        display: "none",
+        duration: 0.2,
+        ease: "expo.out",
+      });
+    }
+
+    tl.to(
+      loadingRef.current,
+      {
+        autoAlpha: 1,
+        display: "block",
+        duration: 0.2,
+        ease: "power4.inOut",
+      },
+      "-=.2",
+    );
+  };
+
+  const handleReverse = ({
+    tl,
+    loadingRef,
+    iconRef,
+  }: {
+    tl: gsap.core.Timeline;
+    loadingRef: React.RefObject<HTMLDivElement>;
+    iconRef: React.RefObject<HTMLSpanElement>;
+  }) => {
+    tl.to(
+      loadingRef.current,
+      {
+        autoAlpha: 0,
+        display: "none",
+        duration: 0.2,
+        ease: "power4.inOut",
+      },
+      "-=.2",
+    );
+
+    if (iconRef.current) {
+      tl.to(iconRef.current, {
+        autoAlpha: 1,
+        scale: 1,
+        display: "inline-block",
+        duration: 0.2,
+        ease: "expo.out",
+      });
+    }
+  };
+
   const renderIcon = () => {
-    return <Icon selfRef={iconRef} name={icon!} classList={iconClassList} />;
+    return (
+      <Icon
+        selfRef={iconRef}
+        name={icon!}
+        classList={`${styles.buttonIcon} ${iconClassList}`}
+      />
+    );
   };
 
   const renderLoading = () => {
@@ -116,14 +146,13 @@ export const Button = ({
       {...(block && { "data-block": true })}
       {...(loading && { "data-loading": true })}
       {...(underline && { "data-underline": true })}
+      {...(icon && { "data-icon-position": iconPosition })}
       {...(href && { href })}
       onClick={onclick}
     >
       {icon && iconPosition === "left" && renderIcon()}
-      <span>
-        {renderLoading()}
-        {text}
-      </span>
+      {renderLoading()}
+      {text}
       {icon && iconPosition === "right" && renderIcon()}
     </Tag>
   );

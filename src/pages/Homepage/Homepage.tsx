@@ -17,12 +17,13 @@ export const Homepage = () => {
         classList={styles.description}
       />
       <Button
-        text="Conocenos"
+        text="Ver todos los trabajos"
         loading={loading}
         onclick={() => setLoading(!loading)}
-        color="teal"
+        color="green"
         variant="outlined"
-        icon={IconNames.DOWNARROW}
+        icon={IconNames.RIGHTARROW}
+        iconPosition="right"
       />
     </div>
   );
