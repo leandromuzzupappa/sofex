@@ -9,6 +9,10 @@
   padding: 0;
 }
 
+html {
+  background: var(--clr-neutral-100);
+}
+
 h1,
 h2,
 h3,
