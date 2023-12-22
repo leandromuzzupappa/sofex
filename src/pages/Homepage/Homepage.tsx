@@ -24,6 +24,7 @@ export const Homepage = () => {
         variant="outlined"
         icon={IconNames.RIGHTARROW}
         iconPosition="right"
+        theme="secondary"
       />
     </div>
   );
