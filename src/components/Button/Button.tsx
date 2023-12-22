@@ -138,11 +138,11 @@ export const Button = ({
   return (
     <Tag
       className={`${styles.button} ${classList}`}
-      disabled={disabled}
       data-color={color}
       data-shape={shape}
       data-theme={theme}
       data-variant={variant}
+      {...(disabled && { disabled: true })}
       {...(block && { "data-block": true })}
       {...(loading && { "data-loading": true })}
       {...(underline && { "data-underline": true })}
