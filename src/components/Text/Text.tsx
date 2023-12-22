@@ -1,13 +1,5 @@
 import styles from "./Text.module.css";
-import { FontWeight, FontAlign } from "@data/types/Font";
-
-interface ITextProps {
-  text: string;
-  tag?: "p" | "span";
-  align?: FontAlign;
-  weight?: FontWeight;
-  classList?: string;
-}
+import { ITextProps } from "@data/interfaces/Text";
 
 export const Text = ({
   text,

@@ -1,13 +1,5 @@
 import styles from "./Heading.module.css";
-import { Font, FontWeight } from "@data/types/Font";
-
-interface IHeadingProps {
-  text: string;
-  level?: 1 | 2 | 3 | 4 | 5 | 6;
-  font?: Font;
-  weight?: FontWeight;
-  classList?: string;
-}
+import { IHeadingProps } from "@data/interfaces/Heading";
 
 export const Heading = ({
   text,
