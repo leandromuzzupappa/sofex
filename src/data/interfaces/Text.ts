@@ -6,4 +6,8 @@ export interface ITextProps {
   align?: FontAlign;
   weight?: FontWeight;
   classList?: string;
+  ellipsis?: boolean;
+  ellipsisLines?: number;
+  ellipsisButtonText?: string;
+  selfRef?: React.RefObject<HTMLParagraphElement | HTMLSpanElement>;
 }
