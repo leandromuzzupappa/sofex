@@ -38,7 +38,7 @@ export const Homepage = () => {
               icon={IconNames[item.icon as keyof typeof IconNames]}
               description={item.text}
               ellipsis
-              ellipsisLines={8}
+              ellipsisLines={4}
               ellipsisButtonText="Leer más"
             />
           ))}
