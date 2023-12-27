@@ -1,3 +1,4 @@
+import { Color } from "@data/types/Colors";
 import { Font, FontWeight } from "@data/types/Font";
 
 export interface IHeadingProps {
@@ -6,4 +7,5 @@ export interface IHeadingProps {
   font?: Font;
   weight?: FontWeight;
   classList?: string;
+  color?: Color;
 }

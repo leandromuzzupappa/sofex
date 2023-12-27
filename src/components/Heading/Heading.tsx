@@ -7,6 +7,7 @@ export const Heading = ({
   font = "roboto",
   weight = "regular",
   classList = "",
+  color = "black",
 }: IHeadingProps) => {
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
 
@@ -15,6 +16,7 @@ export const Heading = ({
       className={`${styles.heading} ${classList}`}
       data-font-family={font}
       data-font-weight={weight}
+      data-color={color}
     >
       {text}
     </Tag>

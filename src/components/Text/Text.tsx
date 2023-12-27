@@ -11,6 +11,7 @@ export const Text = ({
   ellipsis,
   ellipsisLines = 3,
   selfRef,
+  color = "black",
 }: ITextProps) => {
   const Tag = tag;
 
@@ -20,6 +21,7 @@ export const Text = ({
       className={`${styles.text} ${classList}`}
       data-align={align}
       data-font-weight={weight}
+      data-color={color}
       {...(ellipsis && { "data-ellipsis": true })}
       {...(ellipsis && {
         style: {

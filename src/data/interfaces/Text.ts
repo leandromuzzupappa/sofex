@@ -1,3 +1,4 @@
+import { Color } from "@data/types/Colors";
 import { FontAlign, FontWeight } from "@data/types/Font";
 
 export interface ITextProps {
@@ -9,5 +10,6 @@ export interface ITextProps {
   ellipsis?: boolean;
   ellipsisLines?: number;
   ellipsisButtonText?: string;
+  color?: Color;
   selfRef?: React.RefObject<HTMLParagraphElement | HTMLSpanElement>;
 }
