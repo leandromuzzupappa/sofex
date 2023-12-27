@@ -49,7 +49,7 @@ export const CardSmall = ({
 
     setTextHeights({ full: childrenHeight, ellipsis: ellipsisHeight });
     if (lines.length <= ellipsisLines) setShowButton(false);
-  }, [ellipsis]);
+  }, [ellipsis, ellipsisLines]);
 
   const onToggleEllipsis = (_ellipsis: boolean) => {
     setShowEllipsis(_ellipsis);
