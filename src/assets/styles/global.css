@@ -33,3 +33,19 @@ a {
 ul {
   list-style: none;
 }
+
+[data-color="white"] {
+  color: var(--clr-neutral-100);
+}
+
+[data-color="grey"] {
+  color: var(--clr-neutral-500);
+}
+
+[data-color="green"] {
+  color: var(--clr-green-450);
+}
+
+[data-color="teal"] {
+  color: var(--clr-green-700);
+}
