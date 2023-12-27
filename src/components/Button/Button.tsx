@@ -4,6 +4,12 @@ import { Icon } from "@components/Icon/Icon";
 import styles from "./Button.module.css";
 import { IButtonProps } from "@data/interfaces/Button";
 
+interface ILoadingConfig {
+  tl: gsap.core.Timeline;
+  loadingRef: HTMLDivElement | null;
+  iconRef: HTMLSpanElement | null;
+}
+
 export const Button = ({
   block = false,
   classList = "",
@@ -19,6 +25,7 @@ export const Button = ({
   theme = "primary",
   underline,
   variant = "",
+  selfRef,
   onclick,
 }: IButtonProps): React.ReactElement<IButtonProps> => {
   const Tag = href ? "a" : "button";
@@ -28,11 +35,16 @@ export const Button = ({
   useLayoutEffect(() => {
     const tl = gsap.timeline({ paused: true });
 
-    if (loading) {
-      handleLoading({ tl, loadingRef, iconRef });
-    } else {
-      handleReverse({ tl, loadingRef, iconRef });
-    }
+    const loading = loadingRef.current;
+    const icon = iconRef.current;
+
+    const config = {
+      tl,
+      loadingRef: loading || null,
+      iconRef: icon || null,
+    };
+
+    loading ? handleLoading(config) : handleLoadingReverse(config);
 
     tl.play();
 
@@ -41,66 +53,54 @@ export const Button = ({
     };
   }, [loading]);
 
-  const handleLoading = ({
-    tl,
-    loadingRef,
-    iconRef,
-  }: {
-    tl: gsap.core.Timeline;
-    loadingRef: React.RefObject<HTMLDivElement>;
-    iconRef: React.RefObject<HTMLSpanElement>;
-  }) => {
-    if (iconRef.current) {
-      tl.to(iconRef.current, {
+  const handleLoading = ({ tl, loadingRef, iconRef }: ILoadingConfig) => {
+    if (iconRef)
+      tl.to(iconRef, {
         autoAlpha: 0,
         scale: 0,
         display: "none",
         duration: 0.2,
         ease: "expo.out",
       });
-    }
 
-    tl.to(
-      loadingRef.current,
-      {
-        autoAlpha: 1,
-        display: "block",
-        duration: 0.2,
-        ease: "power4.inOut",
-      },
-      "-=.2",
-    );
+    if (loadingRef)
+      tl.to(
+        loadingRef,
+        {
+          autoAlpha: 1,
+          display: "block",
+          duration: 0.2,
+          ease: "power4.inOut",
+        },
+        "-=.2",
+      );
   };
 
-  const handleReverse = ({
+  const handleLoadingReverse = ({
     tl,
     loadingRef,
     iconRef,
-  }: {
-    tl: gsap.core.Timeline;
-    loadingRef: React.RefObject<HTMLDivElement>;
-    iconRef: React.RefObject<HTMLSpanElement>;
-  }) => {
-    tl.to(
-      loadingRef.current,
-      {
-        autoAlpha: 0,
-        display: "none",
-        duration: 0.2,
-        ease: "power4.inOut",
-      },
-      "-=.2",
-    );
+  }: ILoadingConfig) => {
+    if (loadingRef)
+      tl.to(
+        loadingRef,
+        {
+          autoAlpha: 0,
+          display: "none",
+          duration: 0.2,
+          ease: "power4.inOut",
+        },
+        "-=.2",
+      );
 
-    if (iconRef.current) {
-      tl.to(iconRef.current, {
+    if (iconRef)
+      tl.to(iconRef, {
         autoAlpha: 1,
         scale: 1,
         display: "inline-block",
         duration: 0.2,
         ease: "expo.out",
       });
-    }
   };
 
   const renderIcon = () => {
@@ -119,7 +119,8 @@ export const Button = ({
 
   return (
     <Tag
-      className={`${styles.button} ${classList}`}
+      ref={selfRef as React.RefObject<HTMLButtonElement & HTMLAnchorElement>}
+      className={`${classList} ${styles.button}`}
       data-color={color}
       data-shape={shape}
       data-theme={theme}
@@ -133,7 +134,7 @@ export const Button = ({
       onClick={onclick}
     >
       {icon && iconPosition === "left" && renderIcon()}
-      {renderLoading()}
+      {loading && renderLoading()}
       {text}
       {icon && iconPosition === "right" && renderIcon()}
     </Tag>

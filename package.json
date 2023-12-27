@@ -20,7 +20,7 @@
     ]
   },
   "dependencies": {
-    "gsap": "^3.12.4",
+    "gsap": "file:gsap-bonus.tgz",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

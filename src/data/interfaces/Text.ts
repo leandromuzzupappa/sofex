@@ -1,3 +1,4 @@
+import { Color } from "@data/types/Colors";
 import { FontAlign, FontWeight } from "@data/types/Font";
 
 export interface ITextProps {
@@ -6,4 +7,9 @@ export interface ITextProps {
   align?: FontAlign;
   weight?: FontWeight;
   classList?: string;
+  ellipsis?: boolean;
+  ellipsisLines?: number;
+  ellipsisButtonText?: string;
+  color?: Color;
+  selfRef?: React.RefObject<HTMLParagraphElement | HTMLSpanElement>;
 }
