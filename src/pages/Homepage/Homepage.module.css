@@ -4,15 +4,6 @@
 }
 
 .aboutSection {
-  margin-block-start: 2rem;
-}
-
-.aboutList {
-  background: var(--clr-neutral-800);
-  display: grid;
-  gap: 4.75rem;
-  grid-template-columns: repeat(3, minmax(150px, 350px));
-  justify-content: center;
-  margin-block-start: 6.4rem;
-  padding-block: 4rem;
+  background: var(--clr-green-900);
+  padding-block: 2rem;
 }
