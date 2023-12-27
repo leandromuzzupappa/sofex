@@ -17,5 +17,6 @@ export interface IButtonProps {
   theme?: "primary" | "secondary";
   underline?: boolean;
   variant?: "" | "filled" | "outlined";
+  selfRef?: React.RefObject<HTMLButtonElement | HTMLAnchorElement>;
   onclick?: () => void;
 }
