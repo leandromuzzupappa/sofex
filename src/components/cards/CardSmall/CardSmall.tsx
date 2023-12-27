@@ -22,7 +22,9 @@ export const CardSmall = ({
   iconPosition,
 }: ICardSmallProps) => {
   const textRef = useRef<HTMLParagraphElement>(null);
+  const buttonRef = useRef<HTMLButtonElement | HTMLAnchorElement>(null);
 
+  const [showButton, setShowButton] = useState(true);
   const [showEllipsis, setShowEllipsis] = useState(ellipsis);
   const [textHeights, setTextHeights] = useState<{ [key: string]: number }>({
     full: 0,
@@ -46,6 +48,7 @@ export const CardSmall = ({
     );
 
     setTextHeights({ full: childrenHeight, ellipsis: ellipsisHeight });
+    if (lines.length <= ellipsisLines) setShowButton(false);
   }, [ellipsis]);
 
   const onToggleEllipsis = (_ellipsis: boolean) => {
@@ -102,12 +105,15 @@ export const CardSmall = ({
         ellipsisButtonText={ellipsisButtonText}
       />
 
-      <Button
-        classList={styles.button}
-        color={color}
-        text={showEllipsis ? ellipsisButtonText : "Leer menos"}
-        onclick={() => onToggleEllipsis(!showEllipsis)}
-      />
+      {showButton && (
+        <Button
+          selfRef={buttonRef}
+          classList={styles.button}
+          color={color}
+          text={showEllipsis ? ellipsisButtonText : "Leer menos"}
+          onclick={() => onToggleEllipsis(!showEllipsis)}
+        />
+      )}
     </article>
   );
 };
