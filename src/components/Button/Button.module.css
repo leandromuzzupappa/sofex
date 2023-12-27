@@ -118,22 +118,17 @@
   opacity: 0.5;
 }
 
-/* events */
-.button:hover {
-  &[data-shape="rounded"] {
-    background: var(--clr-green-100);
+[data-shape="rounded"]:hover {
+  background: var(--clr-green-100);
 
-    &[disabled],
-    &[data-theme="secondary"] {
-      background: var(--clr-neutral-200);
-    }
+  &[disabled],
+  &[data-theme="secondary"] {
+    background: var(--clr-neutral-200);
   }
 }
 
-.button:active {
-  &[data-shape="rounded"] {
-    background: var(--clr-green-450);
-  }
+[data-shape="rounded"]:active {
+  background: var(--clr-green-450);
 }
 
 @keyframes loadingAnimation {
