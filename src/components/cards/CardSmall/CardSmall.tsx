@@ -14,7 +14,7 @@ export const CardSmall = ({
   classList = "",
   color = "teal",
   description,
-  ellipsis,
+  ellipsis = false,
   ellipsisLines = 3,
   ellipsisButtonText = "Ver más",
   headline,
