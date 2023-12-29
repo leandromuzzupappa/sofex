@@ -87,7 +87,6 @@ export const Button = ({
       {
         width: "0%",
         left: "100%",
-        background: "red",
         duration: 0.3,
         ease: "expo.out",
       },
