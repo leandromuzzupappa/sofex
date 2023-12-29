@@ -137,6 +137,7 @@
   background: var(--btn-color);
   bottom: calc(var(--height) * -1);
   height: var(--height);
+  pointer-events: none;
   position: absolute;
   width: 0%;
 }
