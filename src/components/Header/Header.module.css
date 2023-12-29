@@ -1,0 +1,21 @@
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  font-size: 1rem;
+  margin-block-start: auto;
+  margin-inline-start: auto;
+  padding: 0;
+}
+
+.button:hover {
+  background: transparent;
+}
+
+.nav ul {
+  border: 1px solid red;
+  display: flex;
+}
