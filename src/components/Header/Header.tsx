@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@components/Button/Button";
 import { Heading } from "@components/Heading/Heading";
 import styles from "./Header.module.css";
@@ -22,23 +23,47 @@ const headerSections = [
 ];
 
 export const Header = () => {
+  const [active, setActive] = useState("");
+
+  const handleActiveItem = (itemName: string) => {
+    setActive(itemName);
+  };
+
   return (
     <header className={styles.header}>
-      <Heading text="Sofexs" level={1} font="changa" classList={styles.title} />
-      <nav className={styles.nav}>
-        <ul>
-          {headerSections.map((section) => (
-            <li key={section.label} className={styles.navItem}>
+      <div className={styles.wrapper}>
+        <Heading
+          text="Sofexs"
+          level={1}
+          font="changa"
+          classList={styles.title}
+        />
+        <nav className={styles.nav}>
+          <ul>
+            {headerSections.map((section) => (
+              <li key={section.label} className={styles.navItem}>
+                <Button
+                  classList={`${styles.navItemButton} ${
+                    active === section.label ? styles.navItemActive : ""
+                  }`}
+                  text={section.label}
+                  href={section.to}
+                  underline
+                  onclick={() => handleActiveItem(section.label)}
+                />
+              </li>
+            ))}
+            <li>
               <Button
-                classList={styles.button}
-                text={section.label}
-                href={section.to}
-                underline
+                classList={styles.contactButton}
+                text="Contacto"
+                href="#contacto"
+                variant="filled"
               />
             </li>
-          ))}
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 };
