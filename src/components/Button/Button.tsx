@@ -31,12 +31,14 @@ export const Button = ({
   const Tag = href ? "a" : "button";
   const loadingRef = useRef<HTMLDivElement>(null);
   const iconRef = useRef<HTMLSpanElement>(null);
+  const underlineRef = useRef<HTMLDivElement | null>(null);
 
   useLayoutEffect(() => {
     const tl = gsap.timeline({ paused: true });
 
     const loading = loadingRef.current;
     const icon = iconRef.current;
+    const underline = underlineRef.current;
 
     const config = {
       tl,
@@ -47,6 +49,15 @@ export const Button = ({
     loading ? handleLoading(config) : handleLoadingReverse(config);
 
     tl.play();
+
+    if (underline) {
+      underline.parentElement?.addEventListener("mouseenter", () =>
+        handleUnderlineAnimation(underline, true),
+      );
+      underline.parentElement?.addEventListener("mouseleave", () =>
+        handleUnderlineAnimation(underline),
+      );
+    }
 
     return () => {
       tl.kill();
@@ -103,6 +114,43 @@ export const Button = ({
       });
   };
 
+  const handleUnderlineAnimation = (
+    underline: HTMLDivElement,
+    enter = false,
+  ) => {
+    console.log(1321321);
+
+    if (enter) {
+      gsap.fromTo(
+        underline,
+        {
+          width: "0%",
+          left: "0%",
+        },
+        {
+          width: "100%",
+          left: "0%",
+          duration: 0.5,
+          ease: "expo.out",
+        },
+      );
+    } else {
+      gsap.fromTo(
+        underline,
+        {
+          width: "100%",
+          left: "0%",
+        },
+        {
+          width: "0%",
+          left: "100%",
+          duration: 0.3,
+          ease: "expo.out",
+        },
+      );
+    }
+  };
+
   const renderIcon = () => {
     return (
       <Icon
@@ -115,6 +163,10 @@ export const Button = ({
 
   const renderLoading = () => {
     return <div ref={loadingRef} className={styles.spinner}></div>;
+  };
+
+  const renderUnderline = () => {
+    return <div ref={underlineRef} className={styles.underline}></div>;
   };
 
   return (
@@ -137,6 +189,7 @@ export const Button = ({
       {loading && renderLoading()}
       {text}
       {icon && iconPosition === "right" && renderIcon()}
+      {underline && renderUnderline()}
     </Tag>
   );
 };

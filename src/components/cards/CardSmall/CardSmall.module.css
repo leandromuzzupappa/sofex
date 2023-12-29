@@ -41,7 +41,7 @@
   font-size: 1rem;
   margin-block-start: auto;
   margin-inline-start: auto;
-  padding-block: 0;
+  padding: 0;
 }
 
 .button:hover {

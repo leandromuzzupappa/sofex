@@ -45,9 +45,9 @@
   width: 100%;
 }
 
-[data-underline] {
+/* [data-underline] {
   text-decoration: underline;
-}
+} */
 
 [data-color="white"] {
   --btn-color: var(--clr-neutral-100);
@@ -129,6 +129,16 @@
 
 [data-shape="rounded"]:active {
   background: var(--clr-green-450);
+}
+
+.underline {
+  --height: 2px;
+
+  background: var(--btn-color);
+  bottom: calc(var(--height) * -1);
+  height: var(--height);
+  position: absolute;
+  width: 0%;
 }
 
 @keyframes loadingAnimation {

@@ -112,6 +112,7 @@ export const CardSmall = ({
           color={color}
           text={showEllipsis ? ellipsisButtonText : "Leer menos"}
           onclick={() => onToggleEllipsis(!showEllipsis)}
+          underline
         />
       )}
     </article>
