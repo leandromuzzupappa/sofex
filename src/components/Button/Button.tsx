@@ -1,4 +1,4 @@
-import { useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect, useEffect } from "react";
 import { gsap } from "gsap";
 import { Icon } from "@components/Icon/Icon";
 import styles from "./Button.module.css";
@@ -38,7 +38,6 @@ export const Button = ({
 
     const loading = loadingRef.current;
     const icon = iconRef.current;
-    const underline = underlineRef.current;
 
     const config = {
       tl,
@@ -50,19 +49,67 @@ export const Button = ({
 
     tl.play();
 
-    if (underline) {
-      underline.parentElement?.addEventListener("mouseenter", () =>
-        handleUnderlineAnimation(underline, true),
-      );
-      underline.parentElement?.addEventListener("mouseleave", () =>
-        handleUnderlineAnimation(underline),
-      );
-    }
-
     return () => {
       tl.kill();
     };
   }, [loading]);
+
+  useEffect(() => {
+    const underline = underlineRef.current;
+    const underlineTl = gsap.timeline({ paused: true });
+
+    if (!underline) return;
+    const parent = underline.parentElement as
+      | HTMLAnchorElement
+      | HTMLButtonElement;
+
+    underlineTl.fromTo(
+      underline,
+      {
+        width: "0%",
+        left: "0%",
+        opacity: 0,
+      },
+      {
+        width: "100%",
+        opacity: 1,
+        duration: 0.5,
+        ease: "expo.out",
+      },
+    );
+    underlineTl.addLabel("reverse");
+    underlineTl.fromTo(
+      underline,
+      {
+        width: "100%",
+        left: "0%",
+      },
+      {
+        width: "0%",
+        left: "100%",
+        duration: 0.3,
+        ease: "expo.out",
+      },
+    );
+
+    const handleEnter = () => {
+      underlineTl.tweenFromTo(0, "reverse");
+    };
+
+    const handleLeave = () => {
+      underlineTl.play();
+    };
+
+    parent?.addEventListener("mouseenter", () => handleEnter());
+    parent?.addEventListener("mouseleave", () => handleLeave());
+
+    return () => {
+      if (underline) {
+        parent?.removeEventListener("mouseenter", () => handleEnter());
+        parent?.removeEventListener("mouseleave", () => handleLeave());
+      }
+    };
+  }, []);
 
   const handleLoading = ({ tl, loadingRef, iconRef }: ILoadingConfig) => {
     if (iconRef)
@@ -112,43 +159,6 @@ export const Button = ({
         duration: 0.2,
         ease: "expo.out",
       });
-  };
-
-  const handleUnderlineAnimation = (
-    underline: HTMLDivElement,
-    enter = false,
-  ) => {
-    console.log(1321321);
-
-    if (enter) {
-      gsap.fromTo(
-        underline,
-        {
-          width: "0%",
-          left: "0%",
-        },
-        {
-          width: "100%",
-          left: "0%",
-          duration: 0.5,
-          ease: "expo.out",
-        },
-      );
-    } else {
-      gsap.fromTo(
-        underline,
-        {
-          width: "100%",
-          left: "0%",
-        },
-        {
-          width: "0%",
-          left: "100%",
-          duration: 0.3,
-          ease: "expo.out",
-        },
-      );
-    }
   };
 
   const renderIcon = () => {
