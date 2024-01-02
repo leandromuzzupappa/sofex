@@ -16,12 +16,16 @@ const CardDetails = ({ data }: CardDetailsProps) => {
         <img src={data.logo} alt={data.company} />
       </div>
       <div className="content">
-        <p className="quote">"{data.quote}"</p>
-        <p className="secondary">{data.feedback}</p>
-        <p className="title">{data.name}</p>
-        <p className="secondary">
-          {data.position} at {data.company}
-        </p>
+        <div className="row">
+          <p className="quote">"{data.quote}"</p>
+          <p className="secondary">{data.feedback}</p>
+        </div>
+        <div className="row client-info">
+          <p className="title">{data.name}</p>
+          <p className="secondary">
+            {data.position} at {data.company}
+          </p>
+        </div>
       </div>
     </div>
   );
