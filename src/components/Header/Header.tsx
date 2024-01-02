@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@components/Button/Button";
-import { Heading } from "@components/Heading/Heading";
+import { Logo } from "@components/Logo/Logo";
 import styles from "./Header.module.css";
 
 const headerSections = [
@@ -32,12 +32,7 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.wrapper}>
-        <Heading
-          text="Sofexs"
-          level={1}
-          font="changa"
-          classList={styles.title}
-        />
+        <Logo />
         <nav className={styles.nav}>
           <ul>
             {headerSections.map((section) => (
