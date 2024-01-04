@@ -1,5 +1,5 @@
 import { ICardDetails } from "@data/interfaces/Card";
-import "./card-details.css";
+import styles from "./card-details.module.css";
 const CardDetails = ({
   logo,
   company,
@@ -9,20 +9,18 @@ const CardDetails = ({
   position,
 }: ICardDetails) => {
   return (
-    <article className="card-details">
-      <header className="img">
+    <article className={styles.cardDetails}>
+      <header className={styles.img}>
         <img src={logo} alt={company} />
       </header>
-      <main className="content">
-        <div className="row">
-          <p className="quote">"{quote}"</p>
-          <p className="secondary">{feedback}</p>
-        </div>
-        <div className="row client-info">
-          <p className="title">{name}</p>
-          <p className="secondary">
+      <main className={styles.content}>
+        <div className={styles.quote}>"{quote}"</div>
+        <div className={styles.secondary}>{feedback}</div>
+        <div className={styles.clientInfo}>
+          <div className={styles.title}>{name}</div>
+          <div className={styles.secondary}>
             {position} at {company}
-          </p>
+          </div>
         </div>
       </main>
     </article>
