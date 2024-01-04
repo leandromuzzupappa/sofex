@@ -1,41 +1,29 @@
+import { IThumbnailCard } from "@data/interfaces/Card";
 import "./thumbnailcard.css";
-interface SelectedDataType {
-  name: string;
-  position: string;
-  clientPhoto: string;
-  company: string;
-}
-interface ThumbnailCardProps {
-  data: {
-    name: string;
-    position: string;
-    clientPhoto: string;
-    company: string;
-  };
-  handleClick: (selectedData: SelectedDataType) => void;
-  isSelected: boolean;
-}
 
 const ThumbnailCard = ({
-  data,
+  name,
+  position,
+  clientPhoto,
+  company,
   handleClick,
   isSelected,
-}: ThumbnailCardProps) => {
+}: IThumbnailCard) => {
   return (
-    <div
+    <button
       className={`thumbnail-card ${isSelected ? "selected" : ""}`}
-      onClick={() => handleClick(data)}
+      onClick={() => handleClick({ name, clientPhoto, position, company })}
     >
-      <div className="img">
-        <img src={data.clientPhoto} alt={data.name} />
-      </div>
-      <div className="content">
-        <p className="title">{data.name}</p>
+      <header className="img">
+        <img src={clientPhoto} alt={name} />
+      </header>
+      <main className="content">
+        <h1 className="title">{name}</h1>
         <p className="secondary">
-          {data.position} at {data.company}
+          {position} at {company}
         </p>
-      </div>
-    </div>
+      </main>
+    </button>
   );
 };
 

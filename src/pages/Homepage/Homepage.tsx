@@ -1,25 +1,23 @@
 import { Heading } from "@components/Heading/Heading";
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 
 import { Text } from "@components/Text/Text";
 import styles from "./Homepage.module.css";
 import ThumbnailCard from "@components/thumbnailCard/thumbnailcard";
-import { data } from "@/utils/data";
-import CardDetails from "@components/card-details/card-details";
+import { data } from "@data/static/testimonials";
 export const Homepage = () => {
-  const [selectedItem, setSelectedItem] = useState(data[0]);
+  interface DataType {
+    company: string;
+    name: string;
+    clientPhoto: string;
+    position: string;
+  }
 
-  const handleCardSelect = (
-    selectedData: SetStateAction<{
-      company: string;
-      logo: string;
-      name: string;
-      clientPhoto: string;
-      position: string;
-      quote: string;
-      feedback: string;
-    }>,
-  ) => {
+  const [selectedItem, setSelectedItem] = useState<DataType | null>(
+    data[0] || null,
+  );
+
+  const handleCardSelect = (selectedData: DataType) => {
     setSelectedItem(selectedData);
   };
   return (
@@ -32,17 +30,19 @@ export const Homepage = () => {
       />
       <div className={styles.customersContainer}>
         <div className={styles.customers}>
-          {data.map((companyData, index) => (
+          {data.map(({ name, position, clientPhoto, company }, index) => (
             <ThumbnailCard
-              data={companyData}
+              name={name}
+              position={position}
+              clientPhoto={clientPhoto}
+              company={company}
               key={index}
-              isSelected={selectedItem === companyData}
-              handleClick={() => handleCardSelect(companyData)}
+              isSelected={selectedItem?.company === company}
+              handleClick={() =>
+                handleCardSelect({ name, position, clientPhoto, company })
+              }
             />
           ))}
-        </div>
-        <div className={styles.cardDetailsContainer}>
-          <CardDetails data={selectedItem} />
         </div>
       </div>
     </div>
