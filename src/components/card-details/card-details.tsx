@@ -9,11 +9,11 @@ const CardDetails = ({
   position,
 }: ICardDetails) => {
   return (
-    <div className="card-details">
-      <div className="img">
+    <article className="card-details">
+      <header className="img">
         <img src={logo} alt={company} />
-      </div>
-      <div className="content">
+      </header>
+      <main className="content">
         <div className="row">
           <p className="quote">"{quote}"</p>
           <p className="secondary">{feedback}</p>
@@ -24,8 +24,8 @@ const CardDetails = ({
             {position} at {company}
           </p>
         </div>
-      </div>
-    </div>
+      </main>
+    </article>
   );
 };
 export default CardDetails;
