@@ -12,3 +12,11 @@ export interface IThumbnailCard {
   handleClick: ({ ...selectedData }: SelectedDataType) => void;
   isSelected: boolean;
 }
+export interface ICardDetails {
+  logo: string;
+  company: string;
+  quote: string;
+  feedback: string;
+  name: string;
+  position: string;
+}

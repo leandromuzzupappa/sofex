@@ -1,29 +1,27 @@
+import { ICardDetails } from "@data/interfaces/Card";
 import "./card-details.css";
-interface CardDetailsProps {
-  data: {
-    logo: string;
-    company: string;
-    quote: string;
-    feedback: string;
-    name: string;
-    position: string;
-  };
-}
-const CardDetails = ({ data }: CardDetailsProps) => {
+const CardDetails = ({
+  logo,
+  company,
+  quote,
+  feedback,
+  name,
+  position,
+}: ICardDetails) => {
   return (
     <div className="card-details">
       <div className="img">
-        <img src={data.logo} alt={data.company} />
+        <img src={logo} alt={company} />
       </div>
       <div className="content">
         <div className="row">
-          <p className="quote">"{data.quote}"</p>
-          <p className="secondary">{data.feedback}</p>
+          <p className="quote">"{quote}"</p>
+          <p className="secondary">{feedback}</p>
         </div>
         <div className="row client-info">
-          <p className="title">{data.name}</p>
+          <p className="title">{name}</p>
           <p className="secondary">
-            {data.position} at {data.company}
+            {position} at {company}
           </p>
         </div>
       </div>
