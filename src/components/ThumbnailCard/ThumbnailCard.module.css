@@ -5,10 +5,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    color: #1B1B1B;
-    padding: 1rem;
-    background-color: fff;
-    border-radius: 2rem;
+    color: #5D5D5D;
+    padding: 1rem 1.1rem;
+    background-color: #fff;
+    border-radius: 1.25rem;
     margin: 1rem;
     border: 1px solid #E1E4ED;
     box-shadow: 0px 5px 4px 0px rgba(25, 33, 61, 0.08);
@@ -41,9 +41,11 @@
 .title {
     font-weight: bolder;
     text-align: left;
-    margin-bottom: .7rem;
-    font-size: 1rem;
+    margin-bottom: .5rem;
+    font-size: 16px;
+    line-height: 22px;
 }
 .secondary {
-    font-size: .8rem;
+    font-size: 14px;
+    line-height: 20px;
 }
