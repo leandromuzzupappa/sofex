@@ -1,5 +1,6 @@
 import { IThumbnailCard } from "@data/interfaces/Card";
 import styles from "./ThumbnailCard.module.css";
+import { Heading } from "@components/Heading/Heading";
 const ThumbnailCard = ({
   name,
   position,
@@ -19,10 +20,12 @@ const ThumbnailCard = ({
         <img src={clientPhoto} alt={name} />
       </header>
       <main className={styles.contentWrapper}>
-        <h1 className={styles.title}>{name}</h1>
-        <h2 className={styles.secondary}>
-          {position} at {company}
-        </h2>
+        <Heading text={name} level={1} weight="bold" classList={styles.title} />
+        <Heading
+          text={`${position} at ${company}`}
+          level={2}
+          classList={styles.secondary}
+        />
       </main>
     </button>
   );
