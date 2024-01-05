@@ -5,9 +5,9 @@ import { ICardDetails, IThumbnailData } from "@data/interfaces/Card";
 
 import { Text } from "@components/Text/Text";
 import styles from "./Homepage.module.css";
-import ThumbnailCard from "@components/thumbnailCard/thumbnailcard";
+import ThumbnailCard from "@components/ThumbnailCard/Thumbnailcard";
 import { data } from "@data/static/testimonials";
-import CardDetails from "@components/card-details/Card-details";
+import CardDetails from "@components/CardDetails/CardDetails";
 export const Homepage = () => {
   const [selectedItem, setSelectedItem] = useState<IThumbnailData | null>(
     data[0],

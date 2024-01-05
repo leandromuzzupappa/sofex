@@ -1,5 +1,5 @@
 import { ICardDetails } from "@data/interfaces/Card";
-import styles from "./Card-details.module.css";
+import styles from "./CardDetails.module.css";
 const CardDetails = ({
   logo,
   company,
