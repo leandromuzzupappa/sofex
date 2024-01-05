@@ -1,6 +1,5 @@
 import { IThumbnailCard } from "@data/interfaces/Card";
-import "./thumbnailcard.css";
-
+import styles from "./Thumbnailcard.module.css";
 const ThumbnailCard = ({
   name,
   position,
@@ -11,17 +10,19 @@ const ThumbnailCard = ({
 }: IThumbnailCard) => {
   return (
     <button
-      className={`thumbnail-card ${isSelected ? "selected" : ""}`}
+      className={`${styles.thumbnailCard} ${
+        isSelected ? `${styles.selected}` : ""
+      }`}
       onClick={() => handleClick({ name, clientPhoto, position, company })}
     >
-      <header className="img">
+      <header className={styles.imgWrapper}>
         <img src={clientPhoto} alt={name} />
       </header>
-      <main className="content">
-        <h1 className="title">{name}</h1>
-        <p className="secondary">
+      <main className={styles.contentWrapper}>
+        <h1 className={styles.title}>{name}</h1>
+        <h2 className={styles.secondary}>
           {position} at {company}
-        </p>
+        </h2>
       </main>
     </button>
   );

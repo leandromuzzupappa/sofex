@@ -1,5 +1,5 @@
 import { ICardDetails } from "@data/interfaces/Card";
-import styles from "./card-details.module.css";
+import styles from "./Card-details.module.css";
 const CardDetails = ({
   logo,
   company,
@@ -10,20 +10,21 @@ const CardDetails = ({
 }: ICardDetails) => {
   return (
     <article className={styles.cardDetails}>
-      <header className={styles.img}>
+      <header className={styles.imgWrapper}>
         <img src={logo} alt={company} />
       </header>
       <main className={styles.content}>
-        <div className={styles.quote}>"{quote}"</div>
-        <div className={styles.secondary}>{feedback}</div>
+        <blockquote className={styles.quote}>&quot;{quote}&quot;</blockquote>
+        <p className={styles.secondary}>{feedback}</p>
         <div className={styles.clientInfo}>
-          <div className={styles.title}>{name}</div>
-          <div className={styles.secondary}>
+          <p className={styles.title}>{name}</p>
+          <p className={styles.secondary}>
             {position} at {company}
-          </div>
+          </p>
         </div>
       </main>
     </article>
   );
 };
 export default CardDetails;
+//ESTOY HACIENDO EL CAMBIO EN LAS INICIALES DE LOS COMPONENTES REACT

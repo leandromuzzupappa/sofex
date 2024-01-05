@@ -1,16 +1,15 @@
 import { Heading } from "@components/Heading/Heading";
 import { useState, useEffect } from "react";
 
-import { ICardDetails, ThumbnailData } from "@data/interfaces/Card";
+import { ICardDetails, IThumbnailData } from "@data/interfaces/Card";
 
 import { Text } from "@components/Text/Text";
 import styles from "./Homepage.module.css";
 import ThumbnailCard from "@components/thumbnailCard/thumbnailcard";
 import { data } from "@data/static/testimonials";
-import CardDetails from "@components/card-details/card-details";
-
+import CardDetails from "@components/card-details/Card-details";
 export const Homepage = () => {
-  const [selectedItem, setSelectedItem] = useState<ThumbnailData | null>(
+  const [selectedItem, setSelectedItem] = useState<IThumbnailData | null>(
     data[0],
   );
   const [cardDetailsData, setCardDetailsData] = useState<ICardDetails | null>(
@@ -26,7 +25,7 @@ export const Homepage = () => {
       }
     }
   }, [selectedItem]);
-  const handleCardSelect = (selectedData: ThumbnailData) => {
+  const handleCardSelect = (selectedData: IThumbnailData) => {
     setSelectedItem(selectedData);
   };
   console.log(selectedItem);

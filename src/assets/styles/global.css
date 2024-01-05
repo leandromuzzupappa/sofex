@@ -18,6 +18,7 @@ h5,
 h6,
 p,
 span,
+blockquote,
 button,
 a {
   font-family: var(--roboto);

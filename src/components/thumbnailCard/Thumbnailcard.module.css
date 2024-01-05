@@ -1,4 +1,4 @@
-.thumbnail-card {
+.thumbnailCard {
     width: 16.125rem;
     height: 5.25rem;
     display: flex;
@@ -15,34 +15,34 @@
     transition: all .2s ease-in-out;
     cursor: pointer;
 }
-.selected, .thumbnail-card:hover {
+.selected, .thumbnailCard:hover {
     color: #fff;
     background-color: #152323;
     box-shadow: 0px 18px 88px rgba(24, 39, 75, 0.14), 0px 8px 28px rgba(24, 39, 75, 0.12);
 }
-.thumbnail-card .img {
+.imgWrapper {
     margin-right: .5rem;
     width: 3rem;
     height: 3rem;
     border-radius: 100%;
 }
-.thumbnail-card .img img {
+.imgWrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 100%;
 }
-.thumbnail-card .content {
+.content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: self-start;
 }
-.thumbnail-card .content .title {
+.title {
     font-weight: bolder;
     margin-bottom: .7rem;
     font-size: 1rem;
 }
-.thumbnail-card .content .secondary {
+.secondary {
     font-size: .8rem;
 }
