@@ -27,4 +27,3 @@ const CardDetails = ({
   );
 };
 export default CardDetails;
-//ESTOY HACIENDO EL CAMBIO EN LAS INICIALES DE LOS COMPONENTES REACT
