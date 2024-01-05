@@ -1,5 +1,5 @@
 import { IThumbnailCard } from "@data/interfaces/Card";
-import styles from "./Thumbnailcard.module.css";
+import styles from "./ThumbnailCard.module.css";
 const ThumbnailCard = ({
   name,
   position,
