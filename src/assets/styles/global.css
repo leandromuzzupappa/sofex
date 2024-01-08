@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Changa:wght@600;700&family=Roboto:wght@400;600;700&display=swap");
 @import "variables.css";
 html {
   background-color: #FAFAFA;
@@ -8,6 +9,10 @@ html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  background: var(--clr-neutral-100);
 }
 
 h1,
@@ -30,4 +35,20 @@ a {
 
 ul {
   list-style: none;
+}
+
+[data-color="white"] {
+  color: var(--clr-neutral-100);
+}
+
+[data-color="grey"] {
+  color: var(--clr-neutral-500);
+}
+
+[data-color="green"] {
+  color: var(--clr-green-450);
+}
+
+[data-color="teal"] {
+  color: var(--clr-green-700);
 }

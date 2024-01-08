@@ -29,5 +29,6 @@
     }
   },
   "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "files": ["node_modules/gsap/types/index.d.ts"]
 }

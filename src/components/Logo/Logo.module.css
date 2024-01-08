@@ -1,0 +1,10 @@
+.logoLink {
+  transition: color 0.2s ease-in-out;
+}
+
+.logoLink:hover,
+.logoLink:focus {
+  color: var(--clr-green-450);
+  text-decoration: none;
+  outline: none;
+}

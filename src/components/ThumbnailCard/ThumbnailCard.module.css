@@ -15,8 +15,8 @@
     transition: all .2s ease-in-out;
     cursor: pointer;
 }
-.selected, .thumbnailCard:hover {
-    color: #fff;
+.selected, .thumbnailCard:hover, .thumbnailCard:active, .thumbnailCard:focus {
+    color: var(--clr-neutral-0);
     background-color: #152323;
     box-shadow: 0px 18px 88px rgba(24, 39, 75, 0.14), 0px 8px 28px rgba(24, 39, 75, 0.12);
 }

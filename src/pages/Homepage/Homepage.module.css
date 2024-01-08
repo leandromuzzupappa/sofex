@@ -2,6 +2,12 @@
   color: red;
   font-size: clamp(2rem, 5vw, 4rem);
 }
+
+.aboutSection {
+  background: var(--clr-green-900);
+  padding-block: 2rem;
+}
+
 .customersContainer {
   width: 100%;
 }
