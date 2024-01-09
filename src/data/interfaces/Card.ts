@@ -1,9 +1,3 @@
-interface SelectedDataType {
-  name: string;
-  position: string;
-  clientPhoto: string;
-  company: string;
-}
 export interface IThumbnailData {
   name: string;
   position: string;
@@ -13,7 +7,7 @@ export interface IThumbnailData {
 
 // Interfaz para las funciones de interactividad de la tarjeta
 export interface CardInteractivity {
-  handleClick: ({ ...selectedData }: SelectedDataType) => void;
+  handleClick: ({ ...selectedData }: IThumbnailData) => void;
   isSelected: boolean;
 }
 
