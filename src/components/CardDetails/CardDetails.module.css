@@ -1,5 +1,3 @@
-/* card-details.module.css */
-
 .cardDetails {
     width: 69.125rem;
     height: 24.75rem;
@@ -8,47 +6,51 @@
     border-radius: 1.25rem;
     border: 1px solid var(--clr-neutral-200);
     box-shadow: 0px 18px 88px rgba(24, 39, 75, 0.14), 0px 8px 28px rgba(24, 39, 75, 0.12);
-}
-
-.imgWrapper {
+  }
+  
+  .imgWrapper {
     width: 36.125rem;
-}
-
-.imgWrapper img {
+  }
+  
+  .imgWrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 1.5rem 0 0 1.5rem;
-}
-
-.content {
+  }
+  
+  .content {
     width: 50%;
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    align-items: self-start;
+    align-items: start;
     justify-content: center;
-}
-
-.quote {
+  }
+  
+  .quote {
     font-size: 20px;
     font-weight: bolder;
-}
-.title {
+  }
+  
+  .title {
     font-size: 16px;
-    margin-bottom: .3rem;
+    margin-block-end: .3rem; 
     line-height: 24px;
-}
-.text {
+  }
+  
+  .text {
     font-size: 16px;
     color: #5D5D5D;
     line-height: 24px;
-}
-.secondary {
+  }
+  
+  .secondary {
     font-size: 14px;
     color: var(--clr-neutral-500);
-}
-
-.clientInfo {
-    margin-top: 1rem;
-}
+  }
+  
+  .clientInfo {
+    margin-block-start: 1rem;
+  }
+  

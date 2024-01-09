@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: start;
     color: #5D5D5D;
     padding: 1rem 1.1rem;
     background-color: var(--clr-neutral-0);
@@ -14,38 +14,45 @@
     box-shadow: 0px 5px 4px 0px rgba(25, 33, 61, 0.08);
     transition: all .2s ease-in-out;
     cursor: pointer;
-}
-.selected, .thumbnailCard:hover {
+  }
+  
+  .selected, .thumbnailCard:hover {
     color: var(--clr-neutral-0);
     background-color: var(--clr-green-900);
     box-shadow: 0px 18px 88px rgba(24, 39, 75, 0.14), 0px 8px 28px rgba(24, 39, 75, 0.12);
-}
-.imgWrapper {
-    margin-right: .5rem;
+  }
+  
+  .imgWrapper {
+    margin-inline-end: .5rem;
     width: 3rem;
     height: 3rem;
     border-radius: 100%;
-}
-.imgWrapper img {
+  }
+  
+  .imgWrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 100%;
-}
-.content {
+  }
+  
+  .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: self-start;
-}
-.title {
+    align-items: start; 
+  }
+  
+  .title {
     font-weight: bolder;
     text-align: left;
-    margin-bottom: .5rem;
+    margin-block-end: .5rem; 
     font-size: 16px;
     line-height: 22px;
-}
-.secondary {
+  }
+  
+  .secondary {
     font-size: 14px;
     line-height: 20px;
-}
+  }
+  

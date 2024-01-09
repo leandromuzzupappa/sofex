@@ -1,7 +1,6 @@
 import { ICardDetails } from "@data/interfaces/Card";
 import styles from "./CardDetails.module.css";
 import { Text } from "@components/Text/Text";
-import { Heading } from "@components/Heading/Heading";
 const CardDetails = ({
   logo,
   company,
@@ -19,15 +18,9 @@ const CardDetails = ({
         <blockquote className={styles.quote}>&quot;{quote}&quot;</blockquote>
         <Text text={feedback} weight={"regular"} classList={styles.text} />
         <div className={styles.clientInfo}>
-          <Heading
-            text={name}
-            level={1}
-            weight={"bold"}
-            classList={styles.title}
-          />
-          <Heading
+          <Text text={name} weight={"bold"} classList={styles.title} />
+          <Text
             text={`${position} at ${company}`}
-            level={2}
             classList={styles.secondary}
           />
         </div>
