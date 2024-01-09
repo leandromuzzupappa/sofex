@@ -7,17 +7,17 @@
     justify-content: flex-start;
     color: #5D5D5D;
     padding: 1rem 1.1rem;
-    background-color: #fff;
+    background-color: var(--clr-neutral-0);
     border-radius: 1.25rem;
     margin: 1rem;
-    border: 1px solid #E1E4ED;
+    border: 1px solid var(--clr-neutral-200);
     box-shadow: 0px 5px 4px 0px rgba(25, 33, 61, 0.08);
     transition: all .2s ease-in-out;
     cursor: pointer;
 }
-.selected, .thumbnailCard:hover, .thumbnailCard:active, .thumbnailCard:focus {
+.selected, .thumbnailCard:hover {
     color: var(--clr-neutral-0);
-    background-color: #152323;
+    background-color: var(--clr-green-900);
     box-shadow: 0px 18px 88px rgba(24, 39, 75, 0.14), 0px 8px 28px rgba(24, 39, 75, 0.12);
 }
 .imgWrapper {
