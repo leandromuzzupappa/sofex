@@ -6,13 +6,13 @@ export interface IThumbnailData {
 }
 
 // Interfaz para las funciones de interactividad de la tarjeta
-export interface CardInteractivity {
+export interface ICardInteractivity {
   handleClick: ({ ...selectedData }: IThumbnailData) => void;
   isSelected: boolean;
 }
 
 // Interfaz que combina ambas partes
-export interface IThumbnailCard extends IThumbnailData, CardInteractivity {}
+export interface IThumbnailCard extends IThumbnailData, ICardInteractivity {}
 
 export interface ICardDetails {
   logo: string;
