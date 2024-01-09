@@ -1,4 +1,9 @@
-export const data = [
+import { ICardDetails } from "@data/interfaces/Card";
+
+interface ITestimonialsData extends ICardDetails {
+  clientPhoto: string;
+}
+export const testimonials: ITestimonialsData[] = [
   {
     company: "Mooi",
     logo: "https://images.pexels.com/photos/1337380/pexels-photo-1337380.jpeg",

@@ -21,4 +21,5 @@ export interface ICardDetails {
   feedback: string;
   name: string;
   position: string;
+  clientPhoto: string;
 }
