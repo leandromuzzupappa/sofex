@@ -95,7 +95,7 @@ export const Homepage = () => {
             )}
           </div>
           <div className={styles.cardDetailsContainer}>
-            {cardDetailsData && (
+            {cardDetailsData ? (
               <CardDetails
                 logo={cardDetailsData.logo}
                 company={cardDetailsData.company}
@@ -104,7 +104,7 @@ export const Homepage = () => {
                 name={cardDetailsData.name}
                 position={cardDetailsData.position}
               />
-            )}
+            ) : null}
           </div>
         </div>
       </main>
