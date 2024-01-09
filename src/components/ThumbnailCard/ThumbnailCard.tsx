@@ -16,13 +16,13 @@ const ThumbnailCard = ({
       }`}
       onClick={() => handleClick({ name, clientPhoto, position, company })}
     >
-      <header className={styles.imgWrapper}>
+      <div className={styles.imgWrapper}>
         <img src={clientPhoto} alt={name} />
-      </header>
-      <main className={styles.contentWrapper}>
+      </div>
+      <div className={styles.contentWrapper}>
         <Text text={name} weight="bold" classList={styles.title} />
         <Text text={`${position} at ${company}`} classList={styles.secondary} />
-      </main>
+      </div>
     </button>
   );
 };
