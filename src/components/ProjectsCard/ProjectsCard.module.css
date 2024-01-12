@@ -1,0 +1,58 @@
+.projectsCard {
+    width: fit-content;
+    height: 511px;
+    display: flex;
+    flex-direction: row;
+    margin: 2rem;
+    box-shadow: 0px 1px 4px 0px rgba(25, 33, 61, 0.08);
+    position: relative;
+    z-index: 0;
+}
+
+.infoWrapper {
+    width: 613px;
+    height: 100%;
+    background-color: var(--clr-neutral-0);
+    padding-block-start: 11.375rem;  
+    padding-block-end: 10rem;    
+    padding-inline-start: 4rem;       
+    padding-inline-end: 3.875rem;
+    border-radius: 20px !important;
+    z-index: 100;
+    position: relative;
+    left: 2rem;
+}
+.title {
+    font-size: 38px;
+}
+.secondary {
+    font-size: 1rem;
+}
+.actionButtons {
+    display: flex;
+    flex-direction: row;
+    padding-block-start: 1rem;  
+}
+.btnPrimary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--clr-green-450);
+    margin-inline-end: 1rem;
+
+}
+.btnSecondary {
+    border-color: var(--clr-neutral-200);
+}
+.imageWrapper {
+    width: 511px;
+    z-index: 1;
+    position: relative;
+}
+
+.imageWrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
