@@ -108,8 +108,35 @@ export const Homepage = () => {
             ) : null}
           </div>
         </div>
-        <div className="">
-          <ProjectsCard />
+        <div className={styles.projectsCard}>
+          <ProjectsCard
+            projectTitle="EcoMarket"
+            projectDescription="Plataforma de comercio electrónico dedicada a la venta de productos ecológicos y sostenibles. Los usuarios pueden explorar y comprar una amplia gama de productos amigables con el medio ambiente."
+            projectUrl="#"
+            projectInfoUrl="#"
+            cardOrientation={"normal"}
+          />
+          <ProjectsCard
+            projectTitle="EcoMarket"
+            projectDescription="Plataforma de comercio electrónico dedicada a la venta de productos ecológicos y sostenibles. Los usuarios pueden explorar y comprar una amplia gama de productos amigables con el medio ambiente."
+            projectUrl="#"
+            projectInfoUrl="#"
+            cardOrientation={"reversed"}
+          />
+          <ProjectsCard
+            projectTitle="EcoMarket"
+            projectDescription="Plataforma de comercio electrónico dedicada a la venta de productos ecológicos y sostenibles. Los usuarios pueden explorar y comprar una amplia gama de productos amigables con el medio ambiente."
+            projectUrl="#"
+            projectInfoUrl="#"
+            cardOrientation={"normal"}
+          />
+          <ProjectsCard
+            projectTitle="EcoMarket"
+            projectDescription="Plataforma de comercio electrónico dedicada a la venta de productos ecológicos y sostenibles. Los usuarios pueden explorar y comprar una amplia gama de productos amigables con el medio ambiente."
+            projectUrl="#"
+            projectInfoUrl="#"
+            cardOrientation={"reversed"}
+          />
         </div>
       </main>
     </>
