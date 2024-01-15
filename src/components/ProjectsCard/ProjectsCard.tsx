@@ -8,6 +8,7 @@ const ProjectsCard = ({
   projectDescription,
   projectUrl,
   projectInfoUrl,
+  projectPictureUrl,
   cardOrientation,
 }: IProjectsCardProps) => {
   const isReversed = cardOrientation === "reversed";
@@ -54,8 +55,9 @@ const ProjectsCard = ({
         </div>
         <div className={styles.imageWrapper}>
           <img
-            src="https://cdn.thewirecutter.com/wp-content/media/2022/10/laptopstopicpage-2048px-2102-2x1-1.jpg?auto=webp&quality=75&crop=1.91:1&width=1200"
-            alt=""
+            src={projectPictureUrl}
+            alt={projectTitle}
+            title={projectTitle}
           />
         </div>
       </div>

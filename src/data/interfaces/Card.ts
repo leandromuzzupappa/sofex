@@ -29,5 +29,6 @@ export interface IProjectsCardProps {
   projectDescription: string;
   projectUrl: string;
   projectInfoUrl: string;
+  projectPictureUrl: string;
   cardOrientation?: Orientation;
 }

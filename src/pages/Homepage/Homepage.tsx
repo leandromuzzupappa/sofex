@@ -109,15 +109,27 @@ export const Homepage = () => {
           </div>
         </div>
         <div className={styles.projectsCard}>
-          {projectsData.map((projectItem, index) => (
-            <ProjectsCard
-              projectTitle={projectItem.projectTitle}
-              projectDescription={projectItem.projectDescription}
-              projectUrl={projectItem.projectUrl}
-              projectInfoUrl={projectItem.projectInfoUrl}
-              cardOrientation={index % 2 === 0 ? "normal" : "reversed"}
-            />
-          ))}
+          {projectsData.map(
+            (
+              {
+                projectTitle,
+                projectDescription,
+                projectPictureUrl,
+                projectUrl,
+                projectInfoUrl,
+              },
+              index,
+            ) => (
+              <ProjectsCard
+                projectTitle={projectTitle}
+                projectDescription={projectDescription}
+                projectPictureUrl={projectPictureUrl}
+                projectUrl={projectUrl}
+                projectInfoUrl={projectInfoUrl}
+                cardOrientation={index % 2 === 0 ? "normal" : "reversed"}
+              />
+            ),
+          )}
         </div>
       </main>
     </>
