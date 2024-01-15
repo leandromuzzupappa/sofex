@@ -10,14 +10,16 @@ const ProjectsCard = ({
   projectInfoUrl,
   cardOrientation,
 }: IProjectsCardProps) => {
+  const isReversed = cardOrientation === "reversed";
+
   return (
     <article className={styles.projectsCard}>
       <div
         className={`${styles.cardContainer} ${
-          cardOrientation === "reversed" ? styles.reversed : styles.normal
+          isReversed ? styles.reversed : styles.normal
         }`}
       >
-        <div className={styles.infoWrapper}>
+        <div className={`${styles.infoWrapper}`}>
           <Text
             text={projectTitle}
             align={"left"}
@@ -61,5 +63,3 @@ const ProjectsCard = ({
   );
 };
 export default ProjectsCard;
-
-/*  */
