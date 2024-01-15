@@ -1,5 +1,5 @@
 .projectsCard {
-    width: fit-content;
+    width: 70.125rem;
     height: 31.9375rem;
     margin: 2rem;
     box-shadow: 0px 1px 4px 0px rgba(25, 33, 61, 0.08);
@@ -9,7 +9,7 @@
   }
   
   .cardContainer {
-    width: fit-content;
+    width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -39,14 +39,13 @@
     padding-inline-end: 86.61px;
     border-radius: 20px;
     left: 2rem;
-
     position: relative;
     z-index: 100;
   }
   
   .imageWrapper,
   .reversed .infoWrapper {
-    width: 31.9375rem;
+    width: 38.9375rem;
     z-index: 1;
     position: relative;
   }
