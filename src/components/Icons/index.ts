@@ -4,6 +4,8 @@ import { LeftArrow, DownArrow, RightArrow } from "./ArrowIcons";
 import { CampaignIcon } from "./CampaignIcon";
 import { CloudIcon } from "./CloudIcon";
 import { ContrastIcon } from "./ContrastIcon";
+import { SofexsIso } from "./SofexsIso";
+import { SofexsLogo } from "./SofexsLogo";
 import { SoftwareIcon } from "./SoftwareIcon";
 import { TargetIcon } from "./TargetIcon";
 import { ValuesIcon } from "./ValuesIcon";
@@ -18,6 +20,8 @@ export {
   CampaignIcon,
   CloudIcon,
   ContrastIcon,
+  SofexsIso,
+  SofexsLogo,
   SoftwareIcon,
   TargetIcon,
   ValuesIcon,
