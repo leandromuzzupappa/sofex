@@ -42,7 +42,16 @@ const ProjectsCard = ({
               iconPosition={"right"}
               href={projectUrl}
               variant={"filled"}
-              classList={styles.btnPrimary}
+              classList={`${styles.btnPrimary} ${styles.desktop}`}
+            />
+            <Button
+              text={"Ver"}
+              color={"black"}
+              icon={IconNames.RIGHTARROW}
+              iconPosition={"right"}
+              href={projectUrl}
+              variant={"filled"}
+              classList={`${styles.btnPrimary} ${styles.mobile}`}
             />
             <Button
               text={"Mas info"}

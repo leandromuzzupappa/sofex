@@ -63,7 +63,9 @@
     flex-direction: row;
     padding-block-start: 1rem;
   }
-  
+  .mobile {
+    display: none !important;
+  }
   .btnPrimary {
     display: flex;
     align-items: center;
@@ -86,7 +88,7 @@
   .reversed .infoWrapper {
     width: 31.9375rem;
     left: -2rem;
-    z-index: 100 !important;
+    z-index: 100 ;
   }
   
   .reversed .imageWrapper {
@@ -98,6 +100,12 @@
   }
 
   @media (max-width: 767px) {
+    .desktop {
+      display: none !important; 
+    }
+    .mobile {
+      display: flex !important;
+    }
     .projectsCard {
       width: 22rem;
       height: 20rem;
@@ -147,6 +155,7 @@
     .imageWrapper img {
       height: 11.5rem;
     }
+
     .btnPrimary {
       display: flex;
       align-items: center;
