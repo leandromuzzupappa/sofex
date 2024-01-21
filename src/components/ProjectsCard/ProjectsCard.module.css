@@ -97,4 +97,67 @@
     left: 0;
   }
 
+  @media (max-width: 767px) {
+    .projectsCard {
+      width: 22rem;
+      height: 20rem;
+      height: auto;
+      margin: 2rem ;
+    }
+    .cardContainer {
+      width: 100%;
+      height: fit-content;
+      flex-direction: column-reverse
+    }
+    .infoWrapper,
+    .reversed .imageWrapper {
+      width: 100%;
+      height: 100%;
+      background-color: var(--clr-neutral-0);
+      padding-block-start: 1.5rem;
+      padding-block-end: 1.5rem;
+      padding-inline-start: 1.5rem;
+      padding-inline-end: 1.5rem;
+      left: 0;
+      margin-block-start: -2rem;
+    }
+    .reversed .imageWrapper,
+    .imageWrapper {
+      width: 100%;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      left: 0;
+    }
+    .title {
+      font-size: 1rem;
+      margin-block-end: .5rem;
+    }
+    
+    .secondary {
+      font-size: 12px;
+    }
   
+    .reversed .infoWrapper {
+      width: 100%;
+      left: 0;
+      margin-block-start: -2rem;
+      z-index: 100 !important;
+    }
+    .imageWrapper img {
+      height: 11.5rem;
+    }
+    .btnPrimary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--clr-green-0);
+      border: 2px solid;
+      border-color: var(--clr-green-450);
+      margin-inline-end: 1rem;
+    }
+    
+    .btnSecondary {
+      border-color: var(--clr-neutral-200);
+    }
+  }
