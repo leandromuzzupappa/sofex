@@ -11,5 +11,5 @@ export interface ITextProps {
   ellipsisLines?: number;
   ellipsisButtonText?: string;
   color?: Color;
-  selfRef?: React.RefObject<HTMLParagraphElement | HTMLSpanElement>;
+  selfRef?: React.RefObject<HTMLParagraphElement & HTMLSpanElement>;
 }
