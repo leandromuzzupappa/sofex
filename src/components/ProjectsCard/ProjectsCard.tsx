@@ -17,7 +17,7 @@ const ProjectsCard = ({
     <article className={styles.projectsCard}>
       <div
         className={`${styles.cardContainer} ${
-          isReversed ? styles.reversed : styles.normal
+          isReversed ? styles.reversed : styles.normalDirection
         }`}
       >
         <div className={`${styles.infoWrapper}`}>
@@ -31,7 +31,7 @@ const ProjectsCard = ({
           <Text
             text={projectDescription}
             align={"left"}
-            classList={styles.secondary}
+            classList={styles.subtitle}
             color={"black"}
           />
           <div className={styles.actionButtons}>
@@ -42,7 +42,7 @@ const ProjectsCard = ({
               iconPosition={"right"}
               href={projectUrl}
               variant={"filled"}
-              classList={`${styles.btnPrimary} ${styles.desktop}`}
+              classList={`${styles.btnPrimary} ${styles.btnDesktop}`}
             />
             <Button
               text={"Ver"}
@@ -51,7 +51,7 @@ const ProjectsCard = ({
               iconPosition={"right"}
               href={projectUrl}
               variant={"filled"}
-              classList={`${styles.btnPrimary} ${styles.mobile}`}
+              classList={`${styles.btnPrimary} ${styles.btnMobile}`}
             />
             <Button
               text={"ir a la web"}

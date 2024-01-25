@@ -20,7 +20,7 @@
     z-index: 100;
   }
   
-  .normal {
+  .normalDirection {
     flex-direction: row;
   }
   
@@ -55,7 +55,7 @@
     margin-block-end: 1.5rem;
   }
   
-  .secondary {
+  .subtitle {
     font-size: 1rem;
   }
   
@@ -64,7 +64,7 @@
     flex-direction: row;
     padding-block-start: 2rem;
   }
-  .mobile {
+  .btnMobile {
     display: none !important;
   }
   .btnPrimary {
@@ -125,10 +125,10 @@
     }
   }
   @media (max-width: 1024px) {
-    .desktop {
-      display: none !important; 
+    .btnDesktop {
+      display: none; 
     }
-    .mobile {
+    .btnMobile {
       display: flex !important;
     }
     .projectsCard {
@@ -166,7 +166,7 @@
       margin-block-end: .5rem;
     }
     
-    .secondary {
+    .subtitle {
       font-size: 12px;
     }
   
