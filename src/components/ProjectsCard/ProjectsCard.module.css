@@ -33,10 +33,10 @@
     width: 38.1875rem;
     height: 100%;
     background-color: var(--clr-neutral-0);
-    padding-block-start: 12.375rem;
+    padding-block-start: 11rem;
     padding-block-end: 10rem;
     padding-inline-start: 2rem;
-    padding-inline-end: 86.61px;
+    padding-inline-end: 2.8rem;
     border-radius: 20px;
     left: 2rem;
     position: relative;
@@ -51,7 +51,8 @@
   }
   
   .title {
-    font-size: 38px;
+    font-size: 1.875rem;
+    margin-block-end: 1.5rem;
   }
   
   .secondary {
@@ -61,7 +62,7 @@
   .actionButtons {
     display: flex;
     flex-direction: row;
-    padding-block-start: 0.75rem;
+    padding-block-start: 2rem;
   }
   .mobile {
     display: none !important;
@@ -110,7 +111,19 @@
     z-index: 0;
     left: 0;
   }
-
+  @media (min-width: 1366px) {
+    .projectsCard {
+      max-width: 76.5625rem;
+    }
+    
+    .reversed .infoWrapper {
+      width: 80%;
+      padding-inline-start: 4rem;
+    }
+    .reversed .imageWrapper {
+      width: 100%;
+    }
+  }
   @media (max-width: 1024px) {
     .desktop {
       display: none !important; 
@@ -120,7 +133,6 @@
     }
     .projectsCard {
       max-width: 32rem;
-      height: 20rem;
       height: auto;
       margin: 2rem ;
     }
@@ -172,6 +184,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
+      padding-block-start: 0.75rem;
     }
     .btnPrimary {
       width: 4.5rem;
