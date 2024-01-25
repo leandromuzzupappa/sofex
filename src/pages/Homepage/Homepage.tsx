@@ -109,12 +109,16 @@ export const Homepage = () => {
           </div>
         </div>
         <div className={styles.projectsCard}>
-          {projectsData.map((props, index) => (
-            <ProjectsCard
-              {...props}
-              cardDirection={index % 2 === 0 ? "normal" : "reversed"}
-            />
-          ))}
+          {projectsData && (
+            <>
+              {projectsData.map((props, index) => (
+                <ProjectsCard
+                  {...props}
+                  cardDirection={index % 2 === 0 ? "normal" : "reversed"}
+                />
+              ))}
+            </>
+          )}
         </div>
       </main>
     </>
