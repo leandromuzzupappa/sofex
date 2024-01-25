@@ -1,4 +1,4 @@
-import { Orientation } from "@data/types/Orientation";
+import { Direction } from "@data/types/Direction";
 
 export interface IThumbnailData {
   name: string;
@@ -30,5 +30,5 @@ export interface IProjectsCardProps {
   projectUrl: string;
   projectInfoUrl: string;
   projectPictureUrl: string;
-  cardOrientation?: Orientation;
+  carDirection?: Direction;
 }
