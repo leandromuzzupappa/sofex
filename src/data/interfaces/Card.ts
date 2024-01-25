@@ -30,5 +30,5 @@ export interface IProjectsCardProps {
   projectUrl: string;
   projectInfoUrl: string;
   projectPictureUrl: string;
-  carDirection?: Direction;
+  cardDirection?: Direction;
 }

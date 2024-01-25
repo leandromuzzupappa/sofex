@@ -11,15 +11,12 @@ const ProjectsCard = ({
   projectPictureUrl,
   carDirection,
 }: IProjectsCardProps) => {
-  const isReversed = carDirection === "reversed";
+  const isReversed =
+    carDirection === "reversed" ? `reversed` : `normalDirection`;
 
   return (
     <article className={styles.projectCard}>
-      <div
-        className={`${styles.cardContainer} ${
-          isReversed ? styles.reversed : styles.normalDirection
-        }`}
-      >
+      <div className={`${styles.cardContainer} `} data-orientation={isReversed}>
         <div className={`${styles.infoWrapper}`}>
           <Text
             text={projectTitle}

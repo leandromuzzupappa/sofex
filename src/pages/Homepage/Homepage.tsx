@@ -112,7 +112,7 @@ export const Homepage = () => {
           {projectsData.map((props, index) => (
             <ProjectsCard
               {...props}
-              carDirection={index % 2 === 0 ? "normal" : "reversed"}
+              cardDirection={index % 2 === 0 ? "normal" : "reversed"}
             />
           ))}
         </div>
