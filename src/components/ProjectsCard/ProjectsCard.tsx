@@ -14,7 +14,7 @@ const ProjectsCard = ({
   const isReversed = carDirection === "reversed";
 
   return (
-    <article className={styles.projectsCard}>
+    <article className={styles.projectCard}>
       <div
         className={`${styles.cardContainer} ${
           isReversed ? styles.reversed : styles.normalDirection

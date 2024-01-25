@@ -1,4 +1,4 @@
-.projectsCard {
+  .projectCard {
     max-width: 64rem;
     height: 31.9375rem;
     margin: 2rem;
@@ -112,7 +112,7 @@
     left: 0;
   }
   @media (min-width: 1366px) {
-    .projectsCard {
+    .projectCard {
       max-width: 76.5625rem;
     }
     
@@ -131,7 +131,7 @@
     .btnMobile {
       display: flex !important;
     }
-    .projectsCard {
+    .projectCard {
       max-width: 32rem;
       height: auto;
       margin: 2rem ;
