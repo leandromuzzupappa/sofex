@@ -1,5 +1,5 @@
 .projectsCard {
-    width: 70.125rem;
+    max-width: 64rem;
     height: 31.9375rem;
     margin: 2rem;
     box-shadow: 0px 1px 4px 0px rgba(25, 33, 61, 0.08);
@@ -61,21 +61,32 @@
   .actionButtons {
     display: flex;
     flex-direction: row;
-    padding-block-start: 1rem;
+    padding-block-start: 0.75rem;
   }
   .mobile {
     display: none !important;
   }
   .btnPrimary {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: fit-content;
+    height: 3rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    font-weight: bold;
     background-color: var(--clr-neutral-0);
     margin-inline-end: 1rem;
-
+    border: 3px solid var(--clr-green-450);
   }
-  
+  .btnPrimary span {
+    width: fit-content;
+    position: relative;
+    left: .0rem;
+    top: .1rem;
+  }
   .btnSecondary {
+    width: fit-content;
+    height: 3rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
     border-color: var(--clr-neutral-200);
   }
 
@@ -100,7 +111,7 @@
     left: 0;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 1024px) {
     .desktop {
       display: none !important; 
     }
@@ -108,7 +119,7 @@
       display: flex !important;
     }
     .projectsCard {
-      width: 22rem;
+      max-width: 32rem;
       height: 20rem;
       height: auto;
       margin: 2rem ;
@@ -163,27 +174,20 @@
       align-items: center;
     }
     .btnPrimary {
-      width: 4rem;
-      height: 2rem;
+      width: 4.5rem;
+      height: 2.5rem;
       font-size: 12px;
-      font-weight: bold;
-      display: flex;
-      justify-content: space-between;
       background-color: var(--clr-green-0);
-      border: 2px solid;
       border-color: var(--clr-green-450);
-      margin-inline-end: 1rem;
+      border: 2px solid var(--clr-green-450);
     }
-    .btnPrimary span {
-      width: fit-content;
 
-      position: relative;
-      left: .0rem;
-      top: .1rem;
-    }
     .btnSecondary {
-      height: 1.3rem;
-      font-size: 12px;
+      width: auto;
+      font-size: 0.75rem;
+      height: 2.5rem;
+      background-color: var(--clr-neutral-100);
+      border: 1px solid;
       border-color: var(--clr-neutral-200);
     }
   }

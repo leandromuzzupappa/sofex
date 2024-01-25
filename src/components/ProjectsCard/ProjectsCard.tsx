@@ -36,7 +36,7 @@ const ProjectsCard = ({
           />
           <div className={styles.actionButtons}>
             <Button
-              text={"Ver el trabajo"}
+              text={"Ver más"}
               color={"black"}
               icon={IconNames.RIGHTARROW}
               iconPosition={"right"}
@@ -54,7 +54,7 @@ const ProjectsCard = ({
               classList={`${styles.btnPrimary} ${styles.mobile}`}
             />
             <Button
-              text={"Mas info"}
+              text={"ir a la web"}
               color={"black"}
               href={projectInfoUrl}
               variant={"outlined"}
