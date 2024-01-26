@@ -17,7 +17,7 @@ export const Text = ({
 
   return (
     <Tag
-      ref={selfRef as React.RefObject<HTMLParagraphElement>}
+      ref={selfRef}
       className={`${styles.text} ${classList}`}
       data-align={align}
       data-font-weight={weight}
