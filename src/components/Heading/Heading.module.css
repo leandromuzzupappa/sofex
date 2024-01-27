@@ -1,4 +1,7 @@
-.heading {
+.heading {}
+
+.heading span {
+  display: block;
 }
 
 [data-font-family="roboto"] {

@@ -8,4 +8,5 @@ export interface IHeadingProps {
   weight?: FontWeight;
   classList?: string;
   color?: Color;
+  selfRef?: React.RefObject<HTMLHeadingElement>;
 }
