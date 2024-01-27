@@ -1,8 +1,5 @@
 import { Heading } from "@components/Heading/Heading";
 import { useState, useEffect } from "react";
-
-import { ICardDetails, IThumbnailData } from "@data/interfaces/Card";
-
 import { Text } from "@components/Text/Text";
 import { Button } from "@components/Button/Button";
 import { CardsSection } from "@/templates/CardsSection/CardsSection";
@@ -14,6 +11,7 @@ import { aboutData } from "@data/static/about";
 import { servicesData } from "@data/static/services";
 import { projectsData } from "@data/static/projects";
 import { testimonials } from "@data/static/testimonials";
+import { ICardDetails, IThumbnailData } from "@data/interfaces/Card";
 import CardDetails from "@components/CardDetails/CardDetails";
 import ThumbnailCard from "@components/ThumbnailCard/ThumbnailCard";
 import ProjectsCard from "@components/ProjectsCard/ProjectsCard";
