@@ -1,0 +1,203 @@
+  .projectCard {
+    max-width: 64rem;
+    height: 31.9375rem;
+    margin: 2rem;
+    box-shadow: 0px 1px 4px 0px rgba(25, 33, 61, 0.08);
+    position: relative;
+    border-radius: 20px;
+    z-index: 0;
+  }
+  
+  .cardContainer {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--clr-neutral-0);
+    position: relative;
+    display: flex;
+    border-radius: 20px;
+    z-index: 100;
+  }
+  
+  [data-orientation="normalDirection"] {
+    flex-direction: row;
+  }
+  
+  [data-orientation="reversed"] {
+    flex-direction: row-reverse;
+  }
+  
+  
+  .infoWrapper,
+  [data-orientation="reversed"] .imageWrapper {
+    width: 38.1875rem;
+    height: 100%;
+    background-color: var(--clr-neutral-0);
+    padding-block: 11rem 10rem;
+    padding-inline: 2rem 4.8rem;
+    border-radius: 20px;
+    position: relative;
+    left: 2rem;
+    z-index: 100;
+  }
+  
+  .imageWrapper,
+  .reversed .infoWrapper {
+    width: 38.9375rem;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .title {
+    font-size: 1.875rem;
+    margin-block-end: 1.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .actionButtons {
+    display: flex;
+    flex-direction: row;
+    padding-block-start: 2rem;
+  }
+  .btnMobile {
+    display: none !important;
+  }
+  .btnPrimary {
+    width: fit-content;
+    height: 3rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: var(--clr-neutral-0);
+    margin-inline-end: 1rem;
+    border: 3px solid var(--clr-green-450);
+  }
+  .btnPrimary span {
+    width: fit-content;
+    position: relative;
+    left: .0rem;
+    top: .1rem;
+  }
+  .btnSecondary {
+    width: fit-content;
+    height: 3rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    border-color: var(--clr-neutral-200);
+  }
+
+  .imageWrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+  
+  [data-orientation="reversed"] .infoWrapper {
+    width: 31.9375rem;
+    left: -2rem;
+    z-index: 100 ;
+  }
+  
+  [data-orientation="reversed"] .imageWrapper {
+    width: 38.1875rem;
+    padding: 0;
+    margin: 0;
+    z-index: 0;
+    left: 0;
+  }
+  @media (min-width: 1366px) {
+    .projectCard {
+      max-width: 76.5625rem;
+    }
+    
+    [data-orientation="reversed"] .infoWrapper {
+      width: 80%;
+      padding-inline-start: 4rem;
+    }
+    [data-orientation="reversed"] .imageWrapper {
+      width: 100%;
+    }
+  }
+  @media (max-width: 1024px) {
+    .btnDesktop {
+      display: none; 
+    }
+    .btnMobile {
+      display: flex !important;
+    }
+    .projectCard {
+      max-width: 32rem;
+      height: auto;
+      margin: 2rem ;
+    }
+    .cardContainer {
+      width: 100%;
+      height: fit-content;
+      flex-direction: column-reverse
+    }
+    .infoWrapper,
+    [data-orientation="reversed"] .imageWrapper {
+      width: 100%;
+      height: 100%;
+      background-color: var(--clr-neutral-0);
+      padding-block: 1.5rem;
+      padding-inline: 1.5rem;
+      left: 0;
+      margin-block-start: -2rem;
+    }
+    [data-orientation="reversed"] .imageWrapper,
+    .imageWrapper {
+      width: 100%;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      left: 0;
+    }
+    .title {
+      font-size: 1rem;
+      margin-block-end: .5rem;
+    }
+    
+    .subtitle {
+      font-size: 12px;
+    }
+  
+    [data-orientation="reversed"] .infoWrapper {
+      width: 100%;
+      left: 0;
+      margin-block-start: -2rem;
+      z-index: 100 !important;
+    }
+    .imageWrapper img {
+      height: 11.5rem;
+    }
+
+    .actionButtons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding-block-start: 0.75rem;
+    }
+    .btnPrimary {
+      width: 4.5rem;
+      height: 2.5rem;
+      font-size: 12px;
+      background-color: var(--clr-green-0);
+      border-color: var(--clr-green-450);
+      border: 2px solid var(--clr-green-450);
+    }
+
+    .btnSecondary {
+      width: auto;
+      font-size: 0.75rem;
+      height: 2.5rem;
+      background-color: var(--clr-neutral-100);
+      border: 1px solid;
+      border-color: var(--clr-neutral-200);
+    }
+  }
