@@ -31,7 +31,6 @@ export const CardsSection = ({
   const cardsWrapperRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
-
     const section = sectionRef.current;
     const title = titleRef.current;
     const description = descriptionRef.current;
@@ -51,7 +50,7 @@ export const CardsSection = ({
     const config = {
       from: { y: 50, opacity: 0 },
       to: { y: 0, opacity: 1 },
-    }
+    };
 
     tl.fromTo(title, config.from, config.to);
     tl.fromTo(description, config.from, config.to);
@@ -59,8 +58,7 @@ export const CardsSection = ({
       ...config.to,
       stagger: 0.2,
     });
-
-  }, [])
+  }, []);
 
   return (
     <section ref={sectionRef} className={`${styles.cardsSection} ${classList}`}>

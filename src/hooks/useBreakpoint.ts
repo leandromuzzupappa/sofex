@@ -16,7 +16,7 @@ export const useBreakpoints = (): IBreakpoints => {
     md: false,
     lg: false,
     xl: false,
-    xxl: false
+    xxl: false,
   });
 
   useEffect(() => {
@@ -29,15 +29,14 @@ export const useBreakpoints = (): IBreakpoints => {
         md: innerWidth >= 768 && innerWidth < 992,
         lg: innerWidth >= 992 && innerWidth < 1200,
         xl: innerWidth >= 1200 && innerWidth < 1536,
-        xxl: innerWidth >= 1536
+        xxl: innerWidth >= 1536,
       });
     };
 
-
     handleResize();
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return breakpoints;
