@@ -14,7 +14,7 @@ import { testimonials } from "@data/static/testimonials";
 import { ICardDetails, IThumbnailData } from "@data/interfaces/Card";
 import CardDetails from "@components/CardDetails/CardDetails";
 import ThumbnailCard from "@components/ThumbnailCard/ThumbnailCard";
-import ProjectsCard from "@components/ProjectsCard/ProjectsCard";
+import { ProjectsCard } from "@components/ProjectsCard/ProjectsCard";
 export const Playground = () => {
   const [loading, setLoading] = useState(false);
 

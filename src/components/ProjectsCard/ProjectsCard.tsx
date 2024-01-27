@@ -3,7 +3,7 @@ import { Text } from "@components/Text/Text";
 import { IconNames } from "@data/interfaces/Icons";
 import styles from "./ProjectsCard.module.css";
 import { IProjectsCardProps } from "@data/interfaces/Card";
-const ProjectsCard = ({
+export const ProjectsCard = ({
   projectTitle,
   projectDescription,
   projectUrl,
@@ -70,4 +70,3 @@ const ProjectsCard = ({
     </article>
   );
 };
-export default ProjectsCard;
