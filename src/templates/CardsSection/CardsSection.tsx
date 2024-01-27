@@ -1,9 +1,8 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { Heading } from "@components/Heading/Heading";
-import { Text } from "@components/Text/Text";
 import { CardSmall } from "@components/cards/CardSmall/CardSmall";
+import { TextContent } from "@templates/TextContent/TextContent";
 import styles from "./CardsSection.module.css";
 import { IconNames } from "@data/interfaces/Icons";
 import { Color } from "@data/types/Colors";
@@ -62,21 +61,15 @@ export const CardsSection = ({
 
   return (
     <section ref={sectionRef} className={`${styles.cardsSection} ${classList}`}>
-      <Heading
-        selfRef={titleRef}
-        level={2}
-        classList={styles.headline}
-        text={headline}
-        font="changa"
-        weight="semi-bold"
-        color={color}
-      />
-
-      <Text
-        selfRef={descriptionRef}
+      <TextContent
+        headline={headline}
+        headlineRef={titleRef}
         text={description}
-        classList={styles.description}
+        textRef={descriptionRef}
+        classList={styles.servicesText}
+        align="center"
         color={color}
+        font="changa"
       />
 
       <div ref={cardsWrapperRef} className={styles.cardsWrapper}>
