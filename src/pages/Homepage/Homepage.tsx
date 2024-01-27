@@ -11,10 +11,11 @@ import styles from "./Homepage.module.css";
 import { IconNames } from "@data/interfaces/Icons";
 import { aboutData } from "@data/static/about";
 import { servicesData } from "@data/static/services";
-
+import { projectsData } from "@data/static/projects";
 import { testimonials } from "@data/static/testimonials";
 import CardDetails from "@components/CardDetails/CardDetails";
 import ThumbnailCard from "@components/ThumbnailCard/ThumbnailCard";
+import ProjectsCard from "@components/ProjectsCard/ProjectsCard";
 export const Homepage = () => {
   const [loading, setLoading] = useState(false);
 
@@ -106,6 +107,18 @@ export const Homepage = () => {
               />
             ) : null}
           </div>
+        </div>
+        <div className={styles.projectsCard}>
+          {projectsData && (
+            <>
+              {projectsData.map((props, index) => (
+                <ProjectsCard
+                  {...props}
+                  cardDirection={index % 2 === 0 ? "normal" : "reversed"}
+                />
+              ))}
+            </>
+          )}
         </div>
       </main>
     </>
