@@ -1,0 +1,10 @@
+.headline {
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+  line-height: 111%;
+  margin-block-end: 1.6rem;
+}
+
+.description {
+  line-height: 150%;
+  margin-block-end: 2.5rem;
+}
