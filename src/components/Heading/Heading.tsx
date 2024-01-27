@@ -4,6 +4,7 @@ import { parseLineBreaks } from "@/utils/string";
 
 export const Heading = ({
   text,
+  align = "left",
   level = 2,
   font = "roboto",
   weight = "regular",
@@ -17,6 +18,7 @@ export const Heading = ({
     <Tag
       ref={selfRef as React.RefObject<HTMLHeadingElement>}
       className={`${styles.heading} ${classList}`}
+      data-align={align}
       data-font-family={font}
       data-font-weight={weight}
       data-color={color}
