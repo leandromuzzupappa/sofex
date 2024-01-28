@@ -1,7 +1,8 @@
 .hero {
   align-items: center;
   display: grid;
-  min-height: calc(100vh - 105px);
+  min-height: 103vh;
+  overflow: hidden;
   padding-inline: 1rem;
   position: relative;
   width: 100%;

@@ -5,6 +5,7 @@ import { Heading } from "@components/Heading/Heading";
 import { Text } from "@components/Text/Text";
 import { Icon } from "@components/Icon/Icon";
 import { Button } from "@components/Button/Button";
+import { useBreakpoints } from "@hooks/useBreakpoint";
 import styles from "./CardSmall.module.css";
 import { ICardSmallProps } from "@data/interfaces/Cards";
 
@@ -21,6 +22,8 @@ export const CardSmall = ({
   icon,
   iconPosition,
 }: ICardSmallProps) => {
+  const breakpoints = useBreakpoints();
+
   const textRef = useRef<HTMLParagraphElement>(null);
   const buttonRef = useRef<HTMLButtonElement | HTMLAnchorElement>(null);
 
@@ -49,7 +52,7 @@ export const CardSmall = ({
 
     setTextHeights({ full: childrenHeight, ellipsis: ellipsisHeight });
     if (lines.length <= ellipsisLines) setShowButton(false);
-  }, [ellipsis, ellipsisLines]);
+  }, [ellipsis, ellipsisLines, breakpoints]);
 
   const onToggleEllipsis = (_ellipsis: boolean) => {
     setShowEllipsis(_ellipsis);

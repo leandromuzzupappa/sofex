@@ -4,11 +4,13 @@
   display: block;
 }
 
-[data-font-family="roboto"] {
+[data-font-family="roboto"],
+[data-font-family="roboto"]>span {
   font-family: var(--roboto);
 }
 
-[data-font-family="changa"] {
+[data-font-family="changa"],
+[data-font-family="changa"]>span {
   font-family: var(--changa);
 }
 
