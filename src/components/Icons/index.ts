@@ -10,6 +10,11 @@ import { SoftwareIcon } from "./SoftwareIcon";
 import { TargetIcon } from "./TargetIcon";
 import { ValuesIcon } from "./ValuesIcon";
 import { VisionIcon } from "./VisionIcon";
+import { FacebookIcon } from "./FacebookIcon";
+import { InstagramIcon } from "./InstagramIcon";
+import { LinkedinIcon } from "./LinkedinIcon";
+import { TwitterIcon } from "./TwitterIcon";
+import { YoutubeIcon } from "./YoutubeIcon";
 
 export {
   AccessibilityIcon,
@@ -26,4 +31,9 @@ export {
   TargetIcon,
   ValuesIcon,
   VisionIcon,
+  FacebookIcon,
+  InstagramIcon,
+  LinkedinIcon,
+  TwitterIcon,
+  YoutubeIcon,
 };
