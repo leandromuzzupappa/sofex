@@ -1,0 +1,109 @@
+.footer {
+  background: var(--clr-green-900);
+  padding-inline: 1rem;
+}
+
+.logoWrapper {
+  max-width: 250px;
+}
+
+.logo {
+  display: block;
+  margin-block-end: 1rem;
+}
+
+.logo svg {
+  color: var(--clr-neutral-100);
+}
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding: 2rem 0;
+}
+
+.nav>ul {
+  display: flex;
+  gap: 4.5rem;
+}
+
+.nav li {
+  padding: .8rem 0;
+}
+
+.heading {
+  font-size: 1rem;
+  letter-spacing: 0.69px;
+  margin-block-end: 1rem;
+}
+
+.link {
+  padding: 0;
+  font-size: 1rem;
+}
+
+.link:hover {
+  background: unset;
+}
+
+.terms:hover {
+  background: var(--clr-green-450);
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLink {
+  background: var(--clr-green-700);
+  padding-block: .2rem 0;
+  padding-inline: .2rem;
+  border-radius: .4rem;
+}
+
+.socialLink span {
+  position: relative;
+  left: 0 !important;
+}
+
+.socialLink:hover {
+  background: var(--clr-green-450);
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logoWrapper {
+    margin-block-end: 2rem;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .nav>ul {
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .nav li {
+    flex: 1 1 50%;
+  }
+
+  .heading,
+  .link {
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .copy {
+    text-align: center;
+  }
+}
