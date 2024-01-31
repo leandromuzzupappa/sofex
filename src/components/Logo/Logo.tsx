@@ -4,7 +4,12 @@ import { Text } from "@components/Text/Text";
 import styles from "./Logo.module.css";
 import { IconNames } from "@data/interfaces/Icons";
 
-export const Logo = () => {
+interface ILogoProps {
+  classList?: string;
+  selfRef?: React.RefObject<HTMLSpanElement & HTMLAnchorElement>;
+}
+
+export const Logo = ({ classList, selfRef }: ILogoProps) => {
   const [isHomepage, setIsHomepage] = useState(false);
 
   useEffect(() => {
@@ -15,10 +20,10 @@ export const Logo = () => {
 
   const renderLogo = () => {
     return (
-      <>
+      <span ref={selfRef} className={classList || ""}>
         <Icon name={IconNames.SOFEXSLOGO} classList={styles.logo} />
         <Text text="Sofexs logo" classList={styles.logoText} />
-      </>
+      </span>
     );
   };
 
@@ -27,7 +32,7 @@ export const Logo = () => {
       {isHomepage ? (
         renderLogo()
       ) : (
-        <a href="/" className={styles.logoLink}>
+        <a ref={selfRef} href="/" className={`${styles.logoLink} ${classList}`}>
           {renderLogo()}
         </a>
       )}
