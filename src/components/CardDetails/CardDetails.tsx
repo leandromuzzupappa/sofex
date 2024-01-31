@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { Text } from "@components/Text/Text";
 import styles from "./CardDetails.module.css";
 import { ICardDetails } from "@data/interfaces/Card";
-const CardDetails = ({
+export const CardDetails = ({
   logo,
   company,
   quote,
