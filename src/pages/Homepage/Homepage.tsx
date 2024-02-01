@@ -72,9 +72,14 @@ export const Homepage = () => {
           headline="Nos especializamos para ti"
           description="Nuestra misión es brindar soluciones a la medida de tus necesidades para potenciar tu éxito."
           cards={servicesData}
+          id="servicios"
         />
 
-        <section ref={projectsSectionRef} className={styles.projectsSection}>
+        <section
+          ref={projectsSectionRef}
+          className={styles.projectsSection}
+          id="portfolio"
+        >
           <div className={styles.wrapper}>
             <TextContent
               headline="Proyectos"
@@ -125,6 +130,7 @@ export const Homepage = () => {
           cards={aboutData}
           color="white"
           ellipsisLines={8}
+          id="nosotros"
         />
 
         <Testimonials />

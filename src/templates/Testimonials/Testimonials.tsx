@@ -29,7 +29,7 @@ export const Testimonials = () => {
   };
 
   return (
-    <section className={styles.testimonialsSection}>
+    <section className={styles.testimonialsSection} id="clientes">
       <div className={styles.customersContainer}>
         <div className={styles.customers}>
           {testimonialsData.map(

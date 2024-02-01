@@ -53,7 +53,11 @@ export const CardsSection = ({
   }, []);
 
   return (
-    <section ref={sectionRef} className={`${styles.cardsSection} ${classList}`}>
+    <section
+      ref={sectionRef}
+      className={`${styles.cardsSection} ${classList}`}
+      {...props}
+    >
       <TextContent
         headline={headline}
         headlineRef={titleRef}

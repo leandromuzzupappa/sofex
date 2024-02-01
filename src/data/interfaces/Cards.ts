@@ -24,4 +24,5 @@ export interface ICardsSectionProps
   description: string;
   headline: string;
   color?: Color;
+  id?: string;
 }

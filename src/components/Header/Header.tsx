@@ -7,19 +7,19 @@ import styles from "./Header.module.css";
 const headerSections = [
   {
     label: "Servicios",
-    to: "#servicios",
+    to: "/#servicios",
   },
   {
     label: "Portfolio",
-    to: "#portfolio",
+    to: "/#portfolio",
   },
   {
     label: "Clientes",
-    to: "#clientes",
+    to: "/#clientes",
   },
   {
     label: "Nosotros",
-    to: "#nosotros",
+    to: "/#nosotros",
   },
 ];
 
