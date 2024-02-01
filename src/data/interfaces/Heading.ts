@@ -10,5 +10,5 @@ export interface IHeadingProps {
   color?: Color;
   font?: Font;
   selfRef?: React.RefObject<HTMLHeadingElement>;
-  tabIndex?: number | string;
+  tabIndex?: number;
 }

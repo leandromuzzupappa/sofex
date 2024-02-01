@@ -26,7 +26,7 @@ export const Footer = () => {
             level={4}
             text="Quiénes somos"
             classList={styles.heading}
-            tabIndex="0"
+            tabIndex={0}
             weight="bold"
           />
           <ul>
@@ -74,7 +74,7 @@ export const Footer = () => {
             level={4}
             text="Servicios"
             classList={styles.heading}
-            tabIndex="0"
+            tabIndex={0}
             weight="bold"
           />
           <ul>
@@ -140,7 +140,7 @@ export const Footer = () => {
             level={4}
             text="Porfolio"
             classList={styles.heading}
-            tabIndex="0"
+            tabIndex={0}
             weight="bold"
           />
           <ul>
