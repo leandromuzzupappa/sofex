@@ -6,8 +6,9 @@ interface IProjectsData {
   projectInfoUrl: string;
   projectsTechnologies?: ITechnologiesData[];
 }
-interface ITechnologiesData {
+export interface ITechnologiesData {
   techIcon: string;
+  techName: string;
   description: string;
 }
 export const projectsData: IProjectsData[] = [
@@ -23,23 +24,27 @@ export const projectsData: IProjectsData[] = [
       {
         techIcon:
           "https://imgs.search.brave.com/vW62EhmdMfk7HjQovK_01sgTw5y8V14RQQYtRb1jONQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy8z/LzMzL0ZpZ21hLWxv/Z28uc3Zn.svg",
+        techName: "Figma",
         description:
           "Figma nos permitió crear prototipos interactivos y diseños visuales colaborativos en tiempo real. Desde la conceptualización de la interfaz hasta la creación de wireframes y prototipos.",
       },
       {
         techIcon: "https://www.svgrepo.com/show/475654/github-color.svg",
+        techName: "Github",
         description:
           "Utilizamos GitHub como plataforma de control de versiones, lo que facilitó la colaboración entre los miembros del equipo de desarrollo. Uso de función de ramificación y fusión.",
       },
       {
         techIcon:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
+        techName: "ReactJS",
         description:
           "Componentes reutilizables que facilitaron la gestión y actualización de la interfaz. La arquitectura de componentes fue clave para mantener un desarrollo eficiente y escalable.",
       },
       {
         techIcon:
           "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg",
+        techName: "CSS3",
         description:
           "Clave para personalizar la apariencia de cada página, garantizando coherencia en la estética del sitio. Desde la selección de colores y fuentes hasta la disposición de los elementos.",
       },

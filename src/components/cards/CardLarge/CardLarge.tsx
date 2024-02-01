@@ -6,7 +6,11 @@ const CardLarge = ({ projectsTechnologies }: ILargeCardProps) => {
   return (
     <article className={styles.cardLarge}>
       <div className={styles.iconWrapper}>
-        <img src={projectsTechnologies.techIcon} alt="" />
+        <img
+          src={projectsTechnologies.techIcon}
+          alt={projectsTechnologies.techName}
+          title={projectsTechnologies.techName}
+        />
       </div>
       <div className={styles.contentWrapper}>
         <Text
