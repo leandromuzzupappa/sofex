@@ -1,3 +1,4 @@
+import { ITechnologiesData } from "@data/static/projects";
 import { Direction } from "@data/types/Direction";
 
 export interface IThumbnailData {
@@ -31,4 +32,7 @@ export interface IProjectsCardProps {
   projectInfoUrl: string;
   projectPictureUrl: string;
   cardDirection?: Direction;
+}
+export interface ILargeCardProps {
+  projectsTechnologies: ITechnologiesData;
 }

@@ -124,10 +124,13 @@ export const Homepage = () => {
           )}
         </div>
         <div className={styles.technologiesCards}>
-          <CardLarge />
-          <CardLarge />
-          <CardLarge />
-          <CardLarge />
+          {projectsData.map((project) => (
+            <>
+              {project.projectsTechnologies?.map((technology, techIndex) => (
+                <CardLarge key={techIndex} projectsTechnologies={technology} />
+              ))}
+            </>
+          ))}
         </div>
       </main>
     </>
