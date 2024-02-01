@@ -17,6 +17,7 @@ import { testimonials } from "@data/static/testimonials";
 import CardDetails from "@components/CardDetails/CardDetails";
 import ThumbnailCard from "@components/ThumbnailCard/ThumbnailCard";
 import ProjectsCard from "@components/ProjectsCard/ProjectsCard";
+import CardLarge from "@components/cards/CardLarge/CardLarge";
 export const Homepage = () => {
   const [loading, setLoading] = useState(false);
 
@@ -121,6 +122,9 @@ export const Homepage = () => {
               ))}
             </>
           )}
+        </div>
+        <div className="cardsLarge">
+          <CardLarge />
         </div>
       </main>
     </>
