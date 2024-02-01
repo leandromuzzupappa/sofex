@@ -16,7 +16,7 @@
     align-items: center;
 }
 .iconWrapper img {
-    width: 1.61456rem;
+    width: 2.61456rem;
     height: 2.42138rem;
 }
 .contentWrapper {
@@ -36,11 +36,7 @@
         margin-inline: 0 1.2rem;
         padding-inline: 1.2rem 1.2rem;
     }
-    .iconWrapper img {
-        width: 1.61456rem;
-        height: 2.42138rem;
-        
-    }
+
     .contentWrapper {
         font-size: 12px;
     }
