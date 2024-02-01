@@ -1,7 +1,7 @@
 import { IThumbnailCard } from "@data/interfaces/Card";
 import styles from "./ThumbnailCard.module.css";
 import { Text } from "@components/Text/Text";
-const ThumbnailCard = ({
+export const ThumbnailCard = ({
   name,
   position,
   clientPhoto,

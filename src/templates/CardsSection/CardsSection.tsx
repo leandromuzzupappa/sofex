@@ -5,17 +5,9 @@ import { CardSmall } from "@components/cards/CardSmall/CardSmall";
 import { TextContent } from "@templates/TextContent/TextContent";
 import styles from "./CardsSection.module.css";
 import { IconNames } from "@data/interfaces/Icons";
-import { Color } from "@data/types/Colors";
+import { ICardsSectionProps } from "@data/interfaces/Cards";
 
 gsap.registerPlugin(ScrollTrigger);
-
-interface ICardsSectionProps {
-  cards: { [key: string]: string }[];
-  classList?: string;
-  description: string;
-  headline: string;
-  color?: Color;
-}
 
 export const CardsSection = ({
   cards,
@@ -23,6 +15,7 @@ export const CardsSection = ({
   description,
   headline,
   color = "black",
+  ...props
 }: ICardsSectionProps) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -80,7 +73,7 @@ export const CardsSection = ({
             icon={IconNames[item.icon as keyof typeof IconNames]}
             description={item.text}
             ellipsis
-            ellipsisLines={4}
+            ellipsisLines={props.ellipsisLines || 4}
             ellipsisButtonText="Leer más"
           />
         ))}

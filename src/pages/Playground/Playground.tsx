@@ -10,7 +10,7 @@ import { IconNames } from "@data/interfaces/Icons";
 import { aboutData } from "@data/static/about";
 import { servicesData } from "@data/static/services";
 import { projectsData } from "@data/static/projects";
-import { testimonials } from "@data/static/testimonials";
+import { testimonialsData } from "@data/static/testimonials";
 import { ICardDetails, IThumbnailData } from "@data/interfaces/Card";
 import CardDetails from "@components/CardDetails/CardDetails";
 import ThumbnailCard from "@components/ThumbnailCard/ThumbnailCard";
@@ -19,14 +19,14 @@ export const Playground = () => {
   const [loading, setLoading] = useState(false);
 
   const [selectedItem, setSelectedItem] = useState<IThumbnailData | null>(
-    testimonials[0],
+    testimonialsData[0],
   );
   const [cardDetailsData, setCardDetailsData] = useState<ICardDetails | null>(
     null,
   );
   useEffect(() => {
     if (selectedItem) {
-      const foundItem = testimonials.find(
+      const foundItem = testimonialsData.find(
         (item) => item.company === selectedItem.company,
       );
       if (foundItem) {
@@ -81,7 +81,7 @@ export const Playground = () => {
         />
         <div className={styles.customersContainer}>
           <div className={styles.customers}>
-            {testimonials.map(
+            {testimonialsData.map(
               ({ name, position, clientPhoto, company }, index) => (
                 <ThumbnailCard
                   name={name}

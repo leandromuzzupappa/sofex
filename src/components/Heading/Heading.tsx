@@ -11,6 +11,7 @@ export const Heading = ({
   classList = "",
   color = "black",
   selfRef,
+  ...props
 }: IHeadingProps) => {
   const Tag = `h${level}` as "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
@@ -22,6 +23,7 @@ export const Heading = ({
       data-font-family={font}
       data-font-weight={weight}
       data-color={color}
+      {...props}
     >
       {parseLineBreaks(text).map((line, i) => (
         <span key={i + line}>{line}</span>

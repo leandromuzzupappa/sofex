@@ -6,7 +6,9 @@ import { Hero } from "@components/Hero/Hero";
 import { ProjectsCard } from "@components/ProjectsCard/ProjectsCard";
 import { CardsSection } from "@templates/CardsSection/CardsSection";
 import { TextContent } from "@templates/TextContent/TextContent";
+import { Testimonials } from "@templates/Testimonials/Testimonials";
 import styles from "./Homepage.module.css";
+import { aboutData } from "@data/static/about";
 import { projectsData } from "@data/static/projects";
 import { servicesData } from "@data/static/services";
 
@@ -116,6 +118,17 @@ export const Homepage = () => {
             />
           </div>
         </section>
+
+        <CardsSection
+          classList={styles.aboutSection}
+          headline="La esencia de Sofexs"
+          description="Nuestra historia es un testimonio de dedicación y pasión por la excelencia"
+          cards={aboutData}
+          color="white"
+          ellipsisLines={8}
+        />
+
+        <Testimonials />
       </main>
     </>
   );
