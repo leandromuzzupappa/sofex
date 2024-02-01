@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Icon } from "@components/Icon/Icon";
 import { Text } from "@components/Text/Text";
 import styles from "./Logo.module.css";
@@ -32,9 +33,13 @@ export const Logo = ({ classList, selfRef }: ILogoProps) => {
       {isHomepage ? (
         renderLogo()
       ) : (
-        <a ref={selfRef} href="/" className={`${styles.logoLink} ${classList}`}>
+        <Link
+          ref={selfRef}
+          to="/"
+          className={`${styles.logoLink} ${classList}`}
+        >
           {renderLogo()}
-        </a>
+        </Link>
       )}
     </>
   );
