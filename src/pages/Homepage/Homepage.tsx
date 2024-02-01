@@ -123,7 +123,10 @@ export const Homepage = () => {
             </>
           )}
         </div>
-        <div className="cardsLarge">
+        <div className={styles.technologiesCards}>
+          <CardLarge />
+          <CardLarge />
+          <CardLarge />
           <CardLarge />
         </div>
       </main>
