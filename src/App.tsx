@@ -1,14 +1,22 @@
-import { Footer } from "@components/Footer/Footer";
-import { Homepage } from "@pages/Homepage/Homepage";
+import { RouterProvider, createRouter } from "@tanstack/react-router";
+import { routeTree } from "./routeTree.gen";
+
 import "@assets/styles/global.css";
+
+const router = createRouter({ routeTree });
 
 function App() {
   return (
     <>
-      <Homepage />
-      <Footer />
+      <RouterProvider router={router} />
     </>
   );
 }
 
 export default App;
+
+declare module "@tanstack/react-router" {
+  interface Register {
+    router: typeof router;
+  }
+}
