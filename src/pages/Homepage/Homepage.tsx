@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { Header } from "@components/Header/Header";
+import { Footer } from "@components/Footer/Footer";
 import { Hero } from "@components/Hero/Hero";
 import { ProjectsCard } from "@components/ProjectsCard/ProjectsCard";
 import { CardsSection } from "@templates/CardsSection/CardsSection";
@@ -64,7 +64,6 @@ export const Homepage = () => {
 
   return (
     <>
-      <Header />
       <main>
         <Hero />
 
@@ -130,6 +129,7 @@ export const Homepage = () => {
 
         <Testimonials />
       </main>
+      <Footer />
     </>
   );
 };

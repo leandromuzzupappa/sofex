@@ -28,8 +28,7 @@ export const Text = ({
           "--ellipsis-lines-count": ellipsisLines,
         } as React.CSSProperties,
       })}
-    >
-      {text}
-    </Tag>
+      dangerouslySetInnerHTML={{ __html: text }}
+    ></Tag>
   );
 };

@@ -26,7 +26,7 @@ export const Footer = () => {
             level={4}
             text="Quiénes somos"
             classList={styles.heading}
-            tabindex="0"
+            tabIndex={0}
             weight="bold"
           />
           <ul>
@@ -74,7 +74,7 @@ export const Footer = () => {
             level={4}
             text="Servicios"
             classList={styles.heading}
-            tabindex="0"
+            tabIndex={0}
             weight="bold"
           />
           <ul>
@@ -140,7 +140,7 @@ export const Footer = () => {
             level={4}
             text="Porfolio"
             classList={styles.heading}
-            tabindex="0"
+            tabIndex={0}
             weight="bold"
           />
           <ul>
@@ -251,7 +251,7 @@ export const Footer = () => {
         <Button
           color="white"
           text="Terminos y condiciones"
-          href="#terminos-y-condiciones"
+          href="/terminos-y-condiciones"
           classList={styles.terms}
         />
         {renderSocialLinks()}
