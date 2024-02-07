@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { Text } from "@components/Text/Text";
 import { Button } from "@components/Button/Button";
 import { CardsSection } from "@templates/CardsSection/CardsSection";
-import { Header } from "@components/Header/Header";
 import { Hero } from "@components/Hero/Hero";
 import styles from "./Playground.module.css";
 import { IconNames } from "@data/interfaces/Icons";
@@ -40,7 +39,6 @@ export const Playground = () => {
   };
   return (
     <>
-      <Header />
       <main>
         <Hero />
 
