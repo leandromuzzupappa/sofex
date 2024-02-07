@@ -1,12 +1,14 @@
 import { Color } from "@data/types/Colors";
-import { Font, FontWeight } from "@data/types/Font";
+import { Font, FontAlign, FontWeight } from "@data/types/Font";
 
 export interface IHeadingProps {
   text: string;
   level?: 1 | 2 | 3 | 4 | 5 | 6;
-  font?: Font;
+  align?: FontAlign;
   weight?: FontWeight;
   classList?: string;
   color?: Color;
+  font?: Font;
   selfRef?: React.RefObject<HTMLHeadingElement>;
+  tabIndex?: number;
 }

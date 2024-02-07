@@ -1,0 +1,69 @@
+.title {
+  color: red;
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.aboutSection {
+  background: var(--clr-green-900);
+  padding-block: 2rem;
+}
+
+.customersContainer {
+  width: 100%;
+}
+
+.customers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardDetailsContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projectsCard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sofexs {
+  width: 100%;
+  height: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+  justify-content: center;
+}
+
+.technologiesCards {
+  display: flex;
+  width: 100%;
+  height: 100%; 
+  flex-direction: row; 
+  align-items: center;
+  justify-content: center; 
+  gap: 2.5rem; 
+  margin: 0 auto; 
+  max-width: 1200px; 
+  flex-wrap: wrap;
+}
+/*  */
+
+.servicesSection {
+  margin-block-start: 15rem;
+  margin-block-end: 10rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .servicesSection {
+    margin-block-start: 1rem;
+    margin-block-end: 10rem;
+  }
+}

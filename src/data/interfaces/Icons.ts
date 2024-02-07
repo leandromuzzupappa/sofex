@@ -13,6 +13,11 @@ import {
   TargetIcon,
   ValuesIcon,
   VisionIcon,
+  FacebookIcon,
+  InstagramIcon,
+  LinkedinIcon,
+  TwitterIcon,
+  YoutubeIcon,
 } from "@components/Icons";
 
 export interface IIconProps {
@@ -36,6 +41,11 @@ export enum IconNames {
   TARGET = "target",
   VALUES = "values",
   VISION = "vision",
+  FACEBOOK = "facebook",
+  INSTAGRAM = "instagram",
+  LINKEDIN = "linkedin",
+  TWITTER = "twitter",
+  YOUTUBE = "youtube",
 }
 
 export const iconList = {
@@ -53,4 +63,9 @@ export const iconList = {
   [IconNames.TARGET]: TargetIcon,
   [IconNames.VALUES]: ValuesIcon,
   [IconNames.VISION]: VisionIcon,
+  [IconNames.FACEBOOK]: FacebookIcon,
+  [IconNames.INSTAGRAM]: InstagramIcon,
+  [IconNames.LINKEDIN]: LinkedinIcon,
+  [IconNames.TWITTER]: TwitterIcon,
+  [IconNames.YOUTUBE]: YoutubeIcon,
 };
