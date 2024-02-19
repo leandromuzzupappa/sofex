@@ -1,8 +1,17 @@
-const Input = () => {
+import { IInputProps } from "@data/interfaces/Input";
+
+const Input = ({ name, type, placeholder, label, required }: IInputProps) => {
   return (
     <>
-      <label htmlFor="nameInput">Nombre *</label>
-      <input type="text" name="nameInput" placeholder="John Doe" required />
+      <label htmlFor={name}>
+        {label} {required ? "*" : " "}
+      </label>
+      <input
+        type={type}
+        name={name}
+        placeholder={placeholder}
+        required={required}
+      />
     </>
   );
 };
