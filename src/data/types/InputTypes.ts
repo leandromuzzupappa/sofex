@@ -10,4 +10,5 @@ export type InputTypes =
   | "number"
   | "date"
   | "time"
-  | "color";
+  | "color"
+  | "textarea";

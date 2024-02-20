@@ -1,0 +1,21 @@
+.inputItems {
+    flex: 1 1 calc(50% - 1rem); /* Cada input ocupa el 50% del ancho del contenedor menos el espacio para el margen */
+    margin-inline: 0px 1rem;
+    margin-block: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.inputItems .label {
+    font-weight: bold;
+    color: var(--clr-neutral-500);
+}
+.inputItems .input, .textarea {
+    font-weight: 400;
+    margin-block-start: .5rem;
+    padding: 1rem;
+    color: var(--clr-neutral-500);
+    background-color: var(--cir-neutral-0);
+    border: 1.3px solid var(--clr-neutral-200);
+    box-shadow: 0 1px 5px 0 rgba(25, 33, 61, 0.08);
+    border-radius: .5rem;
+}

@@ -1,5 +1,21 @@
 .formWrapper {
+    margin-inline: 10rem;
+    margin-block: 1rem;
+    padding: 4rem;
     width: 686px;
     height: 713px;
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cir-neutral-0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave que cubre todos los lados */
+}
+.formWrapper .inputs {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.formButton {
+    border-radius: 1rem;
+    width: 100%;
+    background-color: var(--clr-green-450);
 }

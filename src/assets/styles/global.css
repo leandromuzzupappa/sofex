@@ -28,6 +28,9 @@ h6,
 p,
 span,
 blockquote,
+label,
+input,
+textarea,
 button,
 a {
   font-family: var(--roboto);
