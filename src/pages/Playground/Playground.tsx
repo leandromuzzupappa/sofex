@@ -15,7 +15,7 @@ import CardDetails from "@components/CardDetails/CardDetails";
 import ThumbnailCard from "@components/ThumbnailCard/ThumbnailCard";
 import { ProjectsCard } from "@components/ProjectsCard/ProjectsCard";
 import CardLarge from "@components/cards/CardLarge/CardLarge";
-import Form from "@components/Form/Form";
+import FormSection from "@templates/FormSection/FormSection";
 export const Playground = () => {
   const [loading, setLoading] = useState(false);
 
@@ -131,7 +131,7 @@ export const Playground = () => {
             </>
           ))}
         </div>
-        <Form />
+        <FormSection />
       </main>
     </>
   );

@@ -1,0 +1,11 @@
+.contactCointainer {
+    width: 600px;
+    height: 600px;
+    background-color: var(--cir-green-800);
+    color: var(--clr-neutral-0);
+    padding-inline: 6rem;
+    padding-block: 6rem;
+
+}
+.contactTitle {
+}
