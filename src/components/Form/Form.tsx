@@ -4,20 +4,20 @@ import styles from "./Form.module.css";
 import Input from "@components/Input/Input";
 export const Form = () => {
   return (
-    <div className="formContainer">
+    <div className={styles.formContainer}>
       <form action="POST" className={styles.formWrapper}>
         <div className={styles.inputs}>
           <Input
             type={"text"}
             name={"nameInput"}
-            placeholder={"John Doe"}
+            placeholder={"Nombre Apellido"}
             label={"Nombre"}
             required={true}
           />
           <Input
             type={"email"}
             name={"emailInput"}
-            placeholder={"JohnDoe@example.com"}
+            placeholder={"tucorreo@example.com"}
             label={"Email"}
             required={true}
           />
@@ -36,13 +36,15 @@ export const Form = () => {
             required={false}
           />
         </div>
-        <Input
-          type={"textarea"}
-          name={"messageInput"}
-          placeholder={"Tu mensaje"}
-          label={"Mensaje"}
-          required={true}
-        />
+        <div className={styles.messageInput}>
+          <Input
+            type={"textarea"}
+            name={"messageInput"}
+            placeholder={"Tu mensaje"}
+            label={"Mensaje"}
+            required={true}
+          />
+        </div>
         <div className="actionButtons">
           <Button
             text="Enviar"
@@ -54,6 +56,7 @@ export const Form = () => {
             classList={styles.formButton}
           />
         </div>
+        <p className={styles.disclaimer}>* Campos Obligatorios</p>
       </form>
     </div>
   );
