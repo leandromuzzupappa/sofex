@@ -6,6 +6,10 @@
     border: 3px solid var(--clr-green-450);
     border-radius: 10px;
     overflow: hidden;
+    transition: background-color .2s ease-in-out;
+}
+.contactItem:hover {
+    background-color: var(--clr-green-450);
 }
 .iconWrapper {
     width: 52px;
@@ -34,4 +38,7 @@
     font-size: 12px;
     line-height: 18px;
     color: var(--clr-green-450);
+}
+.contactItem:hover .contentWrapper {
+    color: var(--clr-neutral-900);
 }
