@@ -13,6 +13,7 @@ const Input = ({ name, type, placeholder, label, required }: IInputProps) => {
             <input
               type={type}
               name={name}
+              id={name}
               placeholder={placeholder}
               required={required}
               className={styles.input}
