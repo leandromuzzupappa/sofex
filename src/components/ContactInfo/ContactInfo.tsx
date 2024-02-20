@@ -1,12 +1,13 @@
 import { Text } from "@components/Text/Text";
 import styles from "./ContactInfo.module.css";
+import WhatsAppIcon from "@components/Icons/WhatsAppIcon";
 
 const ContactInfo = () => {
   return (
     <div className={styles.contactCointainer}>
       <Text
-        text={"Trabajemos Juntos!"}
-        weight={"regular"}
+        text={"¡Trabajemos Juntos!"}
+        weight={"bold"}
         classList={styles.contactTitle}
       />
       <Text
@@ -16,6 +17,7 @@ const ContactInfo = () => {
         weight={"regular"}
         classList={styles.text}
       />
+      <WhatsAppIcon />
     </div>
   );
 };
