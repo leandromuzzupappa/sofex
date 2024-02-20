@@ -3,7 +3,7 @@
     height: 600px;
     background-color: var(--cir-green-800);
     color: var(--clr-neutral-0);
-    padding-inline: 8rem 2rem;
+    padding-inline: 6rem 2rem;
     padding-block:  6rem;
     border-radius: 1rem 0 0 1rem;
 
@@ -19,6 +19,7 @@
 }
 .subtitle {
     line-height: 24px;
+    font-weight: 400;
     letter-spacing: 1px;
 }
 .text {
@@ -29,4 +30,14 @@
 }
 .contactItems {
     padding-block: 0 2.6rem;
+}
+.socialMedias {
+    display: flex;
+    flex-direction: column;
+}
+.socialMedias .subtitle {
+    margin-block-end: .5rem;
+}
+.socialMedias .socialMediaIcons {
+    display: flex;
 }

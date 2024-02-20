@@ -1,0 +1,28 @@
+.socialMediaIcon {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+    text-decoration: none;
+    margin-inline-end: 1rem;
+    background-color: rgba(39, 111, 114, 0.35);
+    border-radius: .4rem;
+}
+.iconWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon {
+    width: 100%;
+    height: 100%;
+}
+.icon svg {
+    width: 100%;
+    height: 100%;
+}
