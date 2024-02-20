@@ -2,8 +2,8 @@ export const WhatsAppIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="38"
-      height="38"
+      width="36"
+      height="36"
       fill="#000"
       version="1.1"
       viewBox="0 0 308 308"
