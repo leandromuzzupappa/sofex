@@ -15,7 +15,7 @@ import { InstagramIcon } from "./InstagramIcon";
 import { LinkedinIcon } from "./LinkedinIcon";
 import { TwitterIcon } from "./TwitterIcon";
 import { YoutubeIcon } from "./YoutubeIcon";
-
+import { WhatsAppIcon } from "./WhatsAppIcon";
 export {
   AccessibilityIcon,
   AppsIcon,
@@ -36,4 +36,5 @@ export {
   LinkedinIcon,
   TwitterIcon,
   YoutubeIcon,
+  WhatsAppIcon,
 };

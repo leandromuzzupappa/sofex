@@ -18,6 +18,7 @@ import {
   LinkedinIcon,
   TwitterIcon,
   YoutubeIcon,
+  WhatsAppIcon,
 } from "@components/Icons";
 
 export interface IIconProps {
@@ -46,6 +47,7 @@ export enum IconNames {
   LINKEDIN = "linkedin",
   TWITTER = "twitter",
   YOUTUBE = "youtube",
+  WHATSAPP = "whatsapp",
 }
 
 export const iconList = {
@@ -68,4 +70,5 @@ export const iconList = {
   [IconNames.LINKEDIN]: LinkedinIcon,
   [IconNames.TWITTER]: TwitterIcon,
   [IconNames.YOUTUBE]: YoutubeIcon,
+  [IconNames.WHATSAPP]: WhatsAppIcon,
 };
