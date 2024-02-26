@@ -10,6 +10,7 @@
     color: var(--clr-neutral-500);
 }
 .input, .textarea {
+    width: 100%;
     font-weight: 400;
     font-size: 1rem;
     margin-block: 1rem;
@@ -23,4 +24,18 @@
 .textarea {
     width: 100%;
     margin-block: 1rem;
+}
+.hiddenOnMobile {
+    display: block; 
+}
+
+@media (max-width: 1024px) {
+    .inputItems {
+        width: 100%;
+        flex: 1 1 100%;
+        flex-direction: column;
+    }
+    .hiddenOnMobile {
+        display: none; 
+    }
 }

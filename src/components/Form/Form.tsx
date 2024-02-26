@@ -26,6 +26,7 @@ export const Form = () => {
           placeholder={"(123) 456-7890"}
           label={"Teléfono"}
           required={false}
+          hidden={true}
         />
         <Input
           type={"text"}
@@ -33,6 +34,7 @@ export const Form = () => {
           placeholder={"Tu empresa"}
           label={"Empresa"}
           required={false}
+          hidden={true}
         />
       </div>
       <div className={styles.messageInput}>

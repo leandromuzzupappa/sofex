@@ -42,3 +42,19 @@
 .contactItem:hover .contentWrapper {
     color: var(--clr-neutral-900);
 }
+@media (max-width: 1024px) {
+    .contactItem {
+        width: 200px;
+        border: none;
+        border-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 0; 
+        border-top: 2px solid var(--clr-green-450);
+    }
+    .iconWrapper {
+        border-radius: 4px;
+    }
+    .contentWrapper {
+        border-top: none;
+    }
+}

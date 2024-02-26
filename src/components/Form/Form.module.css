@@ -36,3 +36,11 @@
     font-size: 14px;
     color: var(--clr-neutral-500);
 }
+@media (max-width: 1024px) {
+    .formWrapper {
+        margin: auto;
+        width: 320px;
+        padding-inline: 28px;
+        padding-block: 20px;
+    }
+}

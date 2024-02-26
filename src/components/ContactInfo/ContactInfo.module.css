@@ -41,3 +41,24 @@
 .socialMedias .socialMediaIcons {
     display: flex;
 }
+@media (max-width: 1024px) {
+    .contactCointainer {
+        width: 320px;
+        height: fit-content;
+        padding-inline: 0;
+        padding-block:  2rem;
+        border-radius: 0;
+        background-color: transparent;
+    }
+    .contactItems {
+        padding-block: 0 1rem;
+    }
+    .title {
+        font-size: 20px;
+        margin-block: 0 .5rem;
+        line-height: 36.8px;
+    }
+    .subtitle {
+        line-height: 14.06px;
+    }
+}

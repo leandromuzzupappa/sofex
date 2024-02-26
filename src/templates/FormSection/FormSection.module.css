@@ -4,5 +4,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-block: 2rem;
+    margin-block: 2rem;    
+}
+@media (max-width: 1024px) {
+    .formSection {
+        flex-direction: column;
+        background-color: var(--clr-green-900);
+    }
 }

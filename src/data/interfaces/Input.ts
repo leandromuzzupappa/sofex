@@ -6,4 +6,5 @@ export interface IInputProps {
   placeholder: string;
   label: string;
   required: boolean;
+  hidden?: boolean;
 }

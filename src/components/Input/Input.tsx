@@ -1,12 +1,21 @@
 import { IInputProps } from "@data/interfaces/Input";
 import styles from "./Input.module.css";
 
-const Input = ({ name, type, placeholder, label, required }: IInputProps) => {
+const Input = ({
+  name,
+  type,
+  placeholder,
+  label,
+  required,
+  hidden,
+}: IInputProps) => {
   return (
     <>
       {type != "textarea" ? (
         <>
-          <div className={styles.inputItems}>
+          <div
+            className={`${styles.inputItems} ${hidden ? styles.hiddenOnMobile : ""}`}
+          >
             <label htmlFor={name} className={styles.label}>
               {label} {required ? "*" : " "}
             </label>
