@@ -19,4 +19,5 @@ export interface IButtonProps {
   variant?: "" | "filled" | "outlined";
   selfRef?: React.RefObject<HTMLButtonElement | HTMLAnchorElement>;
   onclick?: () => void;
+  type?: "button" | "reset" | "submit";
 }

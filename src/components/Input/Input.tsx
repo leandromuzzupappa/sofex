@@ -8,10 +8,21 @@ const Input = ({
   label,
   required,
   hidden,
-}: IInputProps) => {
+  onChange,
+  onBlur,
+  value,
+  error,
+}: IInputProps & {
+  onChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => void;
+  onBlur: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  value: string;
+  error?: string | boolean | undefined; // Permitir booleanos como parte de la interfaz
+}) => {
   return (
     <>
-      {type != "textarea" ? (
+      {type !== "textarea" ? (
         <>
           <div
             className={`${styles.inputItems} ${hidden ? styles.hiddenOnMobile : ""}`}
@@ -25,8 +36,16 @@ const Input = ({
               id={name}
               placeholder={placeholder}
               required={required}
-              className={styles.input}
+              className={`${styles.input} ${error ? styles.error : ""}`}
+              onChange={onChange}
+              onBlur={onBlur}
+              value={value}
             />
+            {error && (
+              <div className={styles.errorMessage}>
+                <p>{error}</p>
+              </div>
+            )}
           </div>
         </>
       ) : (
@@ -39,8 +58,16 @@ const Input = ({
             id={name}
             cols={30}
             rows={5}
-            className={styles.textarea}
+            className={`${styles.textarea} ${error ? styles.error : ""}`}
+            onChange={onChange}
+            onBlur={onBlur}
+            value={value}
           ></textarea>
+          {error && (
+            <div className={styles.errorMessage}>
+              <p>{error}</p>
+            </div>
+          )}
         </>
       )}
     </>

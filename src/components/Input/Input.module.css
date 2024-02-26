@@ -1,8 +1,10 @@
 .inputItems {
+    height: 120px;
     flex: 1 1 calc(50% - 1rem); /* Cada input ocupa el 50% del ancho del contenedor menos el espacio para el margen */
     margin-inline: 0px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 .label {
     font-size: 18px;
@@ -23,12 +25,17 @@
 }
 .textarea {
     width: 100%;
-    margin-block: 1rem;
+    margin-block: 0;
 }
 .hiddenOnMobile {
     display: block; 
 }
-
+.errorMessage {
+    color: #ff0000;
+}
+.successMessage {
+    color: #28a745;
+}
 @media (max-width: 1024px) {
     .inputItems {
         width: 100%;

@@ -28,10 +28,11 @@ export const contactForm = {
       type: "text" as InputTypes,
       placeholder: "Ingrese su teléfono",
       required: false,
+      hidden: true,
       validation: Yup.string().matches(
         /^\d+$/,
         "El teléfono debe contener solo números",
-      ), // Ejemplo de validación: solo números permitidos
+      ),
     },
     {
       name: "businessInput",
@@ -39,7 +40,8 @@ export const contactForm = {
       type: "text" as InputTypes,
       placeholder: "Ingrese el nombre de su empresa",
       required: false,
-      validation: Yup.string(), // Puedes agregar la validación necesaria para la empresa
+      hidden: true,
+      validation: Yup.string(),
     },
     {
       name: "messageInput",
