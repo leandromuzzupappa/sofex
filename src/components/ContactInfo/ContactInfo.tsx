@@ -35,11 +35,31 @@ const ContactInfo = () => {
           classList={styles.subtitle}
         />
         <div className={styles.socialMediaIcons}>
-          <SocialMedia icon={IconNames.FACEBOOK} />
-          <SocialMedia icon={IconNames.TWITTER} />
-          <SocialMedia icon={IconNames.INSTAGRAM} />
-          <SocialMedia icon={IconNames.LINKEDIN} />
-          <SocialMedia icon={IconNames.YOUTUBE} />
+          <SocialMedia
+            icon={IconNames.FACEBOOK}
+            urlTo="#facebook"
+            socialMediaName="Facebook"
+          />
+          <SocialMedia
+            icon={IconNames.TWITTER}
+            urlTo="#twitter"
+            socialMediaName="Facebook"
+          />
+          <SocialMedia
+            icon={IconNames.INSTAGRAM}
+            urlTo="#instagram"
+            socialMediaName="Facebook"
+          />
+          <SocialMedia
+            icon={IconNames.LINKEDIN}
+            urlTo="#linkedin"
+            socialMediaName="Facebook"
+          />
+          <SocialMedia
+            icon={IconNames.YOUTUBE}
+            urlTo="#youtube"
+            socialMediaName="Facebook"
+          />
         </div>
       </div>
     </article>

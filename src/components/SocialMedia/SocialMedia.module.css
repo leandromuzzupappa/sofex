@@ -10,6 +10,10 @@
     margin-inline-end: 1rem;
     background-color: rgba(39, 111, 114, 0.35);
     border-radius: .4rem;
+    transition: background-color .2s ease-in-out;
+}
+.socialMediaIcon:hover {
+    background-color: var(--clr-green-450);
 }
 .iconWrapper {
     width: 100%;

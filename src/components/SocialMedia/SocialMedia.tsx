@@ -2,9 +2,14 @@ import { Icon } from "@components/Icon/Icon";
 import styles from "./SocialMedia.module.css";
 import { ISocialMediaProps } from "@data/interfaces/SocialMedia";
 
-const SocialMedia = ({ icon }: ISocialMediaProps) => {
+const SocialMedia = ({ icon, urlTo, socialMediaName }: ISocialMediaProps) => {
   return (
-    <a href="" className={styles.socialMediaIcon}>
+    <a
+      href={urlTo}
+      className={styles.socialMediaIcon}
+      title={socialMediaName}
+      target="_blank"
+    >
       <div className={styles.iconWrapper}>
         <Icon name={icon} classList={styles.icon} />
       </div>
