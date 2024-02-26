@@ -2,49 +2,31 @@ import { Button } from "@components/Button/Button";
 import { IconNames } from "@data/interfaces/Icons";
 import styles from "./Form.module.css";
 import Input from "@components/Input/Input";
+import { contactForm } from "@data/static/forms";
 export const Form = () => {
   return (
     <form action="POST" className={styles.formWrapper}>
       <div className={styles.inputs}>
-        <Input
-          type={"text"}
-          name={"nameInput"}
-          placeholder={"Nombre Apellido"}
-          label={"Nombre"}
-          required={true}
-        />
-        <Input
-          type={"email"}
-          name={"emailInput"}
-          placeholder={"tucorreo@example.com"}
-          label={"Email"}
-          required={true}
-        />
-        <Input
-          type={"text"}
-          name={"cellphoneNumber"}
-          placeholder={"(123) 456-7890"}
-          label={"Teléfono"}
-          required={false}
-          hidden={true}
-        />
-        <Input
-          type={"text"}
-          name={"businessInput"}
-          placeholder={"Tu empresa"}
-          label={"Empresa"}
-          required={false}
-          hidden={true}
-        />
-      </div>
-      <div className={styles.messageInput}>
-        <Input
-          type={"textarea"}
-          name={"messageInput"}
-          placeholder={"Tu mensaje"}
-          label={"Mensaje"}
-          required={true}
-        />
+        {contactForm ? (
+          <>
+            {contactForm.fields.map((field, index) => (
+              <Input
+                key={index}
+                type={field.type}
+                name={field.name}
+                placeholder={field.placeholder}
+                label={field.label}
+                required={field.required}
+                hidden={
+                  field.name == "cellphoneNumber" ||
+                  field.name == "businessInput"
+                    ? false
+                    : true
+                }
+              />
+            ))}
+          </>
+        ) : null}
       </div>
       <div className="actionButtons">
         <Button
