@@ -3,6 +3,7 @@ import styles from "./ContactInfo.module.css";
 import ContactItem from "@components/ContactItem/ContactItem";
 import { IconNames } from "@data/interfaces/Icons";
 import SocialMedia from "@components/SocialMedia/SocialMedia";
+import { socialMedias } from "@data/static/socialMedias";
 
 const ContactInfo = () => {
   return (
@@ -35,31 +36,18 @@ const ContactInfo = () => {
           classList={styles.subtitle}
         />
         <div className={styles.socialMediaIcons}>
-          <SocialMedia
-            icon={IconNames.FACEBOOK}
-            urlTo="#facebook"
-            socialMediaName="Facebook"
-          />
-          <SocialMedia
-            icon={IconNames.TWITTER}
-            urlTo="#twitter"
-            socialMediaName="Facebook"
-          />
-          <SocialMedia
-            icon={IconNames.INSTAGRAM}
-            urlTo="#instagram"
-            socialMediaName="Facebook"
-          />
-          <SocialMedia
-            icon={IconNames.LINKEDIN}
-            urlTo="#linkedin"
-            socialMediaName="Facebook"
-          />
-          <SocialMedia
-            icon={IconNames.YOUTUBE}
-            urlTo="#youtube"
-            socialMediaName="Facebook"
-          />
+          {socialMedias ? (
+            <>
+              {socialMedias.map((socialMedia, index) => (
+                <SocialMedia
+                  key={index}
+                  icon={socialMedia.icon}
+                  urlTo={socialMedia.urlTo}
+                  socialMediaName={socialMedia.socialMediaName}
+                />
+              ))}
+            </>
+          ) : null}
         </div>
       </div>
     </article>
