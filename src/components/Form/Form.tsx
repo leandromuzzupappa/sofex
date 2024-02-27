@@ -15,7 +15,7 @@ type FormValidationSchema = {
 };
 
 export const Form = () => {
-  const { sendEmail } = useApi(); // Usar el hook useApi
+  const { loading, sendEmail } = useApi(); // Usar el hook useApi
   const [isVerified, setIsVerified] = useState(false);
 
   const handleRecaptchaChange = (value: string | null) => {
@@ -91,10 +91,11 @@ export const Form = () => {
       <div className="actionButtons">
         <Button
           type="submit"
-          text="Enviar"
+          text="Enviar consulta"
           theme="primary"
           variant="filled"
           shape="rounded"
+          loading={loading}
           icon={IconNames.RIGHTARROW}
           iconPosition="right"
           classList={styles.formButton}
