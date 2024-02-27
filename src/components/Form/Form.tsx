@@ -18,7 +18,7 @@ export const Form = () => {
   const { sendEmail } = useApi(); // Usar el hook useApi
   const [isVerified, setIsVerified] = useState(false);
 
-  const handleRecaptchaChange = (value) => {
+  const handleRecaptchaChange = (value: string | null) => {
     console.log("Recaptcha value:", value);
     setIsVerified(!!value);
   };
