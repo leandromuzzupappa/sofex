@@ -20,6 +20,7 @@
     ]
   },
   "dependencies": {
+    "@sendgrid/mail": "^8.1.1",
     "@tanstack/react-router": "^1.15.7",
     "formik": "^2.4.5",
     "gsap": "file:gsap-bonus.tgz",

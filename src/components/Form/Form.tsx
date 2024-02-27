@@ -5,13 +5,15 @@ import { IconNames } from "@data/interfaces/Icons";
 import styles from "./Form.module.css";
 import Input from "@components/Input/Input";
 import { contactForm } from "@data/static/forms";
-
+import useApi from "@utils/useApi";
 // Definir un tipo para las validaciones de formulario
 type FormValidationSchema = {
   [key: string]: Yup.StringSchema;
 };
 
 export const Form = () => {
+  const { sendEmail } = useApi(); // Usar el hook useApi
+
   // Construir el esquema de validación del formulario
   const validationSchema: FormValidationSchema = contactForm.fields.reduce(
     (acc, field) => {
@@ -26,9 +28,21 @@ export const Form = () => {
       contactForm.fields.map((field) => [field.name, ""]),
     ),
     validationSchema: Yup.object().shape(validationSchema),
-    onSubmit: (values) => {
-      // Handle form submission here
-      console.log("Form submitted:", values);
+    onSubmit: async (values) => {
+      try {
+        await sendEmail({
+          userEmail: values.emailInput,
+          userName: values.nameInput,
+          userMessage: values.messageInput,
+          userBusiness: values.businessInput,
+          userPhone: values.cellphoneNumber,
+        });
+        console.log(
+          "Correo electrónico enviado exitosamente: " + JSON.stringify(values),
+        );
+      } catch (error) {
+        console.error("Error al enviar el correo electrónico:", error);
+      }
     },
   });
 
