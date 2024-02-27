@@ -16,8 +16,10 @@ import ThumbnailCard from "@components/ThumbnailCard/ThumbnailCard";
 import { ProjectsCard } from "@components/ProjectsCard/ProjectsCard";
 import CardLarge from "@components/cards/CardLarge/CardLarge";
 import FormSection from "@templates/FormSection/FormSection";
+import Toast from "@components/Toast/Toast";
 export const Playground = () => {
   const [loading, setLoading] = useState(false);
+  const [showToast, setShowToast] = useState(false);
 
   const [selectedItem, setSelectedItem] = useState<IThumbnailData | null>(
     testimonialsData[0],
@@ -37,6 +39,9 @@ export const Playground = () => {
   }, [selectedItem]);
   const handleCardSelect = (selectedData: IThumbnailData) => {
     setSelectedItem(selectedData);
+  };
+  const handleToastVisibility = (visible: boolean) => {
+    setShowToast(visible);
   };
   return (
     <>
@@ -132,6 +137,12 @@ export const Playground = () => {
           ))}
         </div>
         <FormSection />
+        <Toast
+          text={"message"}
+          error={false}
+          showToasty={showToast}
+          onToastClose={handleToastVisibility}
+        />
       </main>
     </>
   );
