@@ -6,6 +6,9 @@ import styles from "./Form.module.css";
 import Input from "@components/Input/Input";
 import { contactForm } from "@data/static/forms";
 import useApi from "@utils/useApi";
+import ReCAPTCHA from "react-google-recaptcha";
+import { useState } from "react";
+
 // Definir un tipo para las validaciones de formulario
 type FormValidationSchema = {
   [key: string]: Yup.StringSchema;
@@ -13,6 +16,12 @@ type FormValidationSchema = {
 
 export const Form = () => {
   const { sendEmail } = useApi(); // Usar el hook useApi
+  const [isVerified, setIsVerified] = useState(false);
+
+  const handleRecaptchaChange = (value) => {
+    console.log("Recaptcha value:", value);
+    setIsVerified(!!value);
+  };
 
   // Construir el esquema de validación del formulario
   const validationSchema: FormValidationSchema = contactForm.fields.reduce(
@@ -30,6 +39,11 @@ export const Form = () => {
     validationSchema: Yup.object().shape(validationSchema),
     onSubmit: async (values) => {
       try {
+        if (!isVerified) {
+          console.error("Por favor, verifica el reCAPTCHA.");
+          return;
+        }
+
         await sendEmail({
           userEmail: values.emailInput,
           userName: values.nameInput,
@@ -68,6 +82,10 @@ export const Form = () => {
           />
         ))}
       </div>
+      <ReCAPTCHA
+        sitekey={"6Lc4NYIpAAAAAH_XFbEFTtrLMMVPEbu6cffo2gs0"}
+        onChange={handleRecaptchaChange}
+      />
       <div className="actionButtons">
         <Button
           type="submit"
@@ -78,7 +96,7 @@ export const Form = () => {
           icon={IconNames.RIGHTARROW}
           iconPosition="right"
           classList={styles.formButton}
-          disabled={!formik.isValid}
+          disabled={!formik.isValid && isVerified}
         />
       </div>
       <p className={styles.disclaimer}>* Campos Obligatorios</p>
