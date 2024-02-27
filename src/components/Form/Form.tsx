@@ -82,10 +82,12 @@ export const Form = () => {
           />
         ))}
       </div>
-      <ReCAPTCHA
-        sitekey={"6Lc4NYIpAAAAAH_XFbEFTtrLMMVPEbu6cffo2gs0"}
-        onChange={handleRecaptchaChange}
-      />
+      <div className={styles.recaptcha}>
+        <ReCAPTCHA
+          sitekey={"6Lc4NYIpAAAAAH_XFbEFTtrLMMVPEbu6cffo2gs0"}
+          onChange={handleRecaptchaChange}
+        />
+      </div>
       <div className="actionButtons">
         <Button
           type="submit"
