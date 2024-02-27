@@ -13,8 +13,10 @@ import { useState } from "react";
 type FormValidationSchema = {
   [key: string]: Yup.StringSchema;
 };
-
-export const Form = () => {
+interface FormProps {
+  onToastShow: (message: string, error: boolean) => void;
+}
+export const Form = ({ onToastShow }: FormProps) => {
   const { loading, sendEmail } = useApi(); // Usar el hook useApi
   const [isVerified, setIsVerified] = useState(false);
 
@@ -41,6 +43,8 @@ export const Form = () => {
       try {
         if (!isVerified) {
           console.error("Por favor, verifica el reCAPTCHA.");
+          onToastShow("Por favor, verifica el reCAPTCHA.", true);
+
           return;
         }
 
@@ -51,11 +55,10 @@ export const Form = () => {
           userBusiness: values.businessInput,
           userPhone: values.cellphoneNumber,
         });
-        console.log(
-          "Correo electrónico enviado exitosamente: " + JSON.stringify(values),
-        );
+        onToastShow("Correo electrónico enviado exitosamente.", false);
       } catch (error) {
         console.error("Error al enviar el correo electrónico:", error);
+        onToastShow("Error al enviar el correo electrónico.", true);
       }
     },
   });
@@ -91,7 +94,7 @@ export const Form = () => {
       <div className="actionButtons">
         <Button
           type="submit"
-          text="Enviar consulta"
+          text={`${loading ? "Enviando consulta" : "Enviar consulta"}`}
           theme="primary"
           variant="filled"
           shape="rounded"
