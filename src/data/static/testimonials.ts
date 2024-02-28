@@ -17,7 +17,7 @@ export const testimonialsData: ITestimonialsData[] = [
   },
   {
     company: "SalesForce",
-    logo: "https://res.cloudinary.com/ventureharbour-com/images/dpr_auto/f_auto,q_auto/v1671551520/VentureHarbour/salesforce-review/salesforce-review.jpg?_i=AA",
+    logo: "https://assets-global.website-files.com/5c579a2bc3ddd3316ce85540/5c5b78b7927f6aa7907ae2e4_Salesforce.svg",
     clientPhoto:
       "https://i.pinimg.com/originals/14/be/1c/14be1cc04736ad4f1ca52cc7adaa7ee0.jpg",
     name: "Stephanie Powell",

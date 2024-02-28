@@ -76,8 +76,8 @@
   }
   .content {
     width: 100%;
-    height: 17.19rem; /* Aproximadamente 275px */
-    justify-content: center;
+    height: 18.19rem; /* Aproximadamente 275px */
+    justify-content: space-around;
     padding: 1rem;
   }
   .quote {
