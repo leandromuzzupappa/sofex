@@ -37,7 +37,6 @@ const useApi = (): EmailSenderHook => {
             body: JSON.stringify(emailData),
           },
         );
-
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -45,9 +44,9 @@ const useApi = (): EmailSenderHook => {
         const responseData: EmailResponse = await response.json();
         setLoading(false);
         return responseData;
-      } catch (Error) {
+      } catch (error) {
         setLoading(false);
-        setError(error);
+        setError(error as string | null);
       }
     },
     [],

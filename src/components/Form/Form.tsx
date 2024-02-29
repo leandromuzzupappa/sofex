@@ -17,11 +17,10 @@ interface FormProps {
   onToastShow: (message: string, error: boolean) => void;
 }
 export const Form = ({ onToastShow }: FormProps) => {
-  const { loading, sendEmail } = useApi(); // Usar el hook useApi
+  const { error, loading, sendEmail } = useApi(); // Usar el hook useApi
   const [isVerified, setIsVerified] = useState(false);
-
+  const recaptchaKey = process.env.REACT_APP_RECAPTCHA_KEY || ""; // Valor predeterminado si la clave no está definida
   const handleRecaptchaChange = (value: string | null) => {
-    console.log("Recaptcha value:", value);
     setIsVerified(!!value);
   };
 
@@ -47,7 +46,6 @@ export const Form = ({ onToastShow }: FormProps) => {
 
           return;
         }
-
         await sendEmail({
           userEmail: values.emailInput,
           userName: values.nameInput,
@@ -55,6 +53,9 @@ export const Form = ({ onToastShow }: FormProps) => {
           userBusiness: values.businessInput,
           userPhone: values.cellphoneNumber,
         });
+        if (error) {
+          throw new Error(error);
+        }
         onToastShow("Correo electrónico enviado exitosamente.", false);
       } catch (error) {
         console.error("Error al enviar el correo electrónico:", error);
@@ -86,10 +87,7 @@ export const Form = ({ onToastShow }: FormProps) => {
         ))}
       </div>
       <div className={styles.recaptcha}>
-        <ReCAPTCHA
-          sitekey={"6Lc4NYIpAAAAAH_XFbEFTtrLMMVPEbu6cffo2gs0"}
-          onChange={handleRecaptchaChange}
-        />
+        <ReCAPTCHA sitekey={recaptchaKey} onChange={handleRecaptchaChange} />
       </div>
       <div className="actionButtons">
         <Button

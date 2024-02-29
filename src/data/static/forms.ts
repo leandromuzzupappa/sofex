@@ -10,7 +10,12 @@ export const contactForm = {
       type: "text" as InputTypes,
       placeholder: "Ingrese su nombre",
       required: true,
-      validation: Yup.string().required("El nombre es requerido"),
+      validation: Yup.string()
+        .matches(
+          /^[A-Za-z\s]+$/,
+          "Solo se permiten letras y espacios en el nombre",
+        )
+        .required("El nombre es requerido"),
     },
     {
       name: "emailInput",
@@ -41,7 +46,10 @@ export const contactForm = {
       placeholder: "Ingrese el nombre de su empresa",
       required: false,
       hidden: true,
-      validation: Yup.string(),
+      validation: Yup.string().matches(
+        /^[A-Za-z\s]+$/,
+        "Solo se permiten letras y espacios en el nombre de la empresa",
+      ),
     },
     {
       name: "messageInput",
