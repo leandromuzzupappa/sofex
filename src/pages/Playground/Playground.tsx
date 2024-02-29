@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { Text } from "@components/Text/Text";
 import { Button } from "@components/Button/Button";
 import { CardsSection } from "@templates/CardsSection/CardsSection";
-import { Header } from "@components/Header/Header";
 import { Hero } from "@components/Hero/Hero";
 import styles from "./Playground.module.css";
 import { IconNames } from "@data/interfaces/Icons";
@@ -15,6 +14,7 @@ import { ICardDetails, IThumbnailData } from "@data/interfaces/Card";
 import CardDetails from "@components/CardDetails/CardDetails";
 import ThumbnailCard from "@components/ThumbnailCard/ThumbnailCard";
 import { ProjectsCard } from "@components/ProjectsCard/ProjectsCard";
+import CardLarge from "@components/cards/CardLarge/CardLarge";
 export const Playground = () => {
   const [loading, setLoading] = useState(false);
 
@@ -39,7 +39,6 @@ export const Playground = () => {
   };
   return (
     <>
-      <Header />
       <main>
         <Hero />
 
@@ -121,6 +120,15 @@ export const Playground = () => {
               ))}
             </>
           )}
+        </div>
+        <div className={styles.technologiesCards}>
+          {projectsData.map((project) => (
+            <>
+              {project.projectsTechnologies?.map((technology, techIndex) => (
+                <CardLarge key={techIndex} projectsTechnologies={technology} />
+              ))}
+            </>
+          ))}
         </div>
       </main>
     </>

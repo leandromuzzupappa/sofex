@@ -42,7 +42,18 @@
   justify-content: center;
 }
 
-
+.technologiesCards {
+  display: flex;
+  width: 100%;
+  height: 100%; 
+  flex-direction: row; 
+  align-items: center;
+  justify-content: center; 
+  gap: 2.5rem; 
+  margin: 0 auto; 
+  max-width: 1200px; 
+  flex-wrap: wrap;
+}
 /*  */
 
 .servicesSection {
