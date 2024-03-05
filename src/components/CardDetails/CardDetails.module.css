@@ -21,10 +21,10 @@
 }
 
 .content {
-  align-items: start;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: start;
   padding: 2.5rem;
   width: 50%;
 }
@@ -54,4 +54,75 @@
 
 .clientInfo {
   margin-block-start: 1rem;
+}
+@media screen and (max-width: 1024px) {
+  .cardDetails {
+    max-width: 20rem; /* Ancho fijo de la tarjeta */
+    height: 28rem;
+    flex: 0 0 calc(50% - 0.25rem); /* Establece el ancho de cada tarjeta */
+    flex-direction: column;
+    box-shadow: 0px 4px 8px rgba(24, 39, 75, 0.3);
+  }
+
+  .imgWrapper {
+    border-radius: 1.5rem  1.5rem 0 0;
+    width: 100%;
+    height: 173px;
+    position: relative;
+  }
+  .imgWrapper img {
+    width: 100%;
+    height: 100%;
+  }
+  .content {
+    width: 100%;
+    height: 18.19rem; /* Aproximadamente 275px */
+    justify-content: space-around;
+    padding: 1rem;
+  }
+  .quote {
+    font-size: 16px;
+  }
+  .text {
+    font-size: 12px;
+  }
+  .title, .secondary {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cardDetails {
+    position: relative;
+    max-width: 15.395rem;
+    max-height: 24.46rem;
+    flex: 0 0 calc(1515.395rem - 1rem); /* Establece el ancho de cada tarjeta */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(24, 39, 75, 0.3);
+  }
+
+  .imgWrapper {
+    border-radius: 1.5rem  1.5rem 0 0;
+    width: 100%;
+    height: 146px;
+  }
+  .imgWrapper img {
+    height: 146px;
+    width: 100%;
+  }
+  .content {
+    width: 100%;
+    height: 245.36px;
+    justify-content: center;
+    padding: 1rem;
+  }
+  .clientInfo {
+    margin-block: 1rem 0;
+  }
+  .text {
+    line-height: 14.08px;
+  }
+
 }

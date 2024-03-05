@@ -15,10 +15,36 @@
   justify-content: center;
 }
 
-.projectsCard {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.controllers {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .customers {
+    display: none ;
+  }
+  .cardDetailsContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap; /* Evita que las tarjetas se envuelvan */
+    overflow-x: auto; /* Agrega desplazamiento horizontal para ver las tarjetas adicionales */
+    scrollbar-width: none; /* Oculta la barra de desplazamiento */
+    padding-inline-start: 0; /* Asegura que no haya padding al inicio */
+    margin-inline-start: 0; /* Asegura que no haya margen al inicio */
+    -ms-overflow-style: none; /* IE y Edge */
+    justify-content: flex-start; /* Asegura que las tarjetas comiencen desde el borde izquierdo */
+  }
+  .controllers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .controller { 
+    width: fit-content;
+    margin: 0;
+    padding-inline: 2rem;
+    border-radius: 1rem;
+  }
+
 }

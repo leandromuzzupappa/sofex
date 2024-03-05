@@ -20,6 +20,7 @@
     ]
   },
   "dependencies": {
+    "@react-hook/media-query": "^1.1.1",
     "@sendgrid/mail": "^8.1.1",
     "@tanstack/react-router": "^1.15.7",
     "dotenv": "^16.4.5",
