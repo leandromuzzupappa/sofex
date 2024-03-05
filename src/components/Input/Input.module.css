@@ -1,0 +1,48 @@
+.inputItems {
+    height: 120px;
+    flex: 1 1 calc(50% - 1rem); /* Cada input ocupa el 50% del ancho del contenedor menos el espacio para el margen */
+    margin-inline: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.label {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--clr-neutral-500);
+}
+.input, .textarea {
+    width: 100%;
+    font-weight: 400;
+    font-size: 1rem;
+    margin-block: 1rem;
+    padding: 1rem;
+    color: var(--clr-neutral-500);
+    background-color: var(--cir-neutral-0);
+    border: 1.3px solid var(--clr-neutral-200);
+    box-shadow: 0 1px 5px 0 rgba(25, 33, 61, 0.08);
+    border-radius: .5rem;
+}
+.textarea {
+    width: 100%;
+    margin-block: 0;
+}
+.hiddenOnMobile {
+    display: block; 
+}
+.errorMessage {
+    color: #ff0000;
+}
+.successMessage {
+    color: #28a745;
+}
+@media (max-width: 1024px) {
+    .inputItems {
+        width: 100%;
+        flex: 1 1 100%;
+        flex-direction: column;
+    }
+    .hiddenOnMobile {
+        display: none; 
+    }
+}

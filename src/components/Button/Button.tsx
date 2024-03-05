@@ -27,6 +27,7 @@ export const Button = ({
   variant = "",
   selfRef,
   onclick,
+  type,
 }: IButtonProps): React.ReactElement<IButtonProps> => {
   const Tag = href ? "a" : "button";
   const loadingRef = useRef<HTMLDivElement>(null);
@@ -194,6 +195,7 @@ export const Button = ({
       {...(icon && { "data-icon-position": iconPosition })}
       {...(href && { href })}
       onClick={onclick}
+      type={type}
     >
       {icon && iconPosition === "left" && renderIcon()}
       {loading && renderLoading()}

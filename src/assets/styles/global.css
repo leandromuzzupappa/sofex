@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Changa:wght@600;700&family=Roboto:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Changa:wght@600;700&family=Roboto:wght@100;300;400;600;700&display=swap");
 @import "variables.css";
 
 html {
@@ -28,6 +28,9 @@ h6,
 p,
 span,
 blockquote,
+label,
+input,
+textarea,
 button,
 a {
   font-family: var(--roboto);
