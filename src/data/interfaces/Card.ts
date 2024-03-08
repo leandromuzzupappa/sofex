@@ -26,6 +26,7 @@ export interface ICardDetails {
   position: string;
 }
 export interface IProjectsCardProps {
+  id: number;
   projectTitle: string;
   projectDescription: string;
   projectUrl: string;
