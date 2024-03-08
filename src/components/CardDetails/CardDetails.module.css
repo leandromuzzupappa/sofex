@@ -1,11 +1,11 @@
 .cardDetails {
-  border: 1px solid var(--clr-neutral-200);
   border-radius: 1.25rem;
   box-shadow: 0px 18px 88px rgba(24, 39, 75, 0.14), 0px 8px 28px rgba(24, 39, 75, 0.12);
   display: flex;
   height: 24.75rem;
   margin: 1rem;
   width: 69.125rem;
+  background-color: var(--clr-neutral-0);
 }
 
 .imgWrapper {

@@ -15,7 +15,7 @@ import { servicesData } from "@data/static/services";
 
 import wave1Img from "@assets/images/wave1.svg";
 import wave2Img from "@assets/images/wave2.svg";
-
+import wave3Img from "@assets/images/wave3.svg";
 gsap.registerPlugin(ScrollTrigger);
 
 export const Homepage = () => {
@@ -135,10 +135,19 @@ export const Homepage = () => {
         />
 
         <Testimonials />
-
-        <FormSection />
       </main>
-      <Footer />
+      <section className={styles.footerSection}>
+        <FormSection />
+        <Footer />
+        <div className={styles.footerBackground}>
+          <img
+            src={wave3Img}
+            alt="wave3"
+            className={styles.wave}
+            aria-hidden="true"
+          />
+        </div>
+      </section>
     </>
   );
 };

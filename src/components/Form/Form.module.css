@@ -6,7 +6,7 @@
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
-    background-color: var(--cir-neutral-0);
+    background-color: #fff;
     box-shadow: 0 0 3rem rgba(0, 0, 0, 0.1); /* Sombra suave que cubre todos los lados */
 }
 .formWrapper .inputs {
