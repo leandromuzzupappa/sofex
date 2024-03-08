@@ -9,6 +9,5 @@
 @media (max-width: 1024px) {
     .formSection {
         flex-direction: column;
-        background-color: var(--clr-green-900);
     }
 }
