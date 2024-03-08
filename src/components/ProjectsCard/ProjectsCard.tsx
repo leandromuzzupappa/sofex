@@ -4,9 +4,9 @@ import { IconNames } from "@data/interfaces/Icons";
 import styles from "./ProjectsCard.module.css";
 import { IProjectsCardProps } from "@data/interfaces/Card";
 export const ProjectsCard = ({
+  id,
   projectTitle,
   projectDescription,
-  projectUrl,
   projectInfoUrl,
   projectPictureUrl,
   cardDirection,
@@ -37,7 +37,7 @@ export const ProjectsCard = ({
               color={"black"}
               icon={IconNames.RIGHTARROW}
               iconPosition={"right"}
-              href={projectUrl}
+              href={"/projects/" + id + "/" + projectTitle + "/"}
               variant={"filled"}
               classList={`${styles.btnPrimary} ${styles.btnDesktop}`}
             />
@@ -46,7 +46,7 @@ export const ProjectsCard = ({
               color={"black"}
               icon={IconNames.RIGHTARROW}
               iconPosition={"right"}
-              href={projectUrl}
+              href={"/projects/" + id + "/" + projectTitle + "/"}
               variant={"filled"}
               classList={`${styles.btnPrimary} ${styles.btnMobile}`}
             />

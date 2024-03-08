@@ -1,19 +1,31 @@
-interface IProjectsData {
+export interface IProjectsData {
+  id: number;
   projectTitle: string;
+  projectDescriptionShort: string;
   projectDescription: string;
   projectPictureUrl: string;
   projectUrl: string;
   projectInfoUrl: string;
   projectsTechnologies?: ITechnologiesData[];
+  projectsProcess?: IProcess[];
 }
 export interface ITechnologiesData {
   techIcon: string;
   techName: string;
   description: string;
 }
+
+export interface IProcess {
+  headline: string;
+  description: string;
+  icon: string;
+}
+
 export const projectsData: IProjectsData[] = [
   {
+    id: 1,
     projectTitle: "EcoMarket",
+    projectDescriptionShort: "Venta de productos ecológicos y sostenibles.",
     projectDescription:
       "Plataforma de comercio electrónico dedicada a la venta de productos ecológicos y sostenibles. Los usuarios pueden explorar y comprar una amplia gama de productos amigables con el medio ambiente.",
     projectPictureUrl:
@@ -49,9 +61,37 @@ export const projectsData: IProjectsData[] = [
           "Clave para personalizar la apariencia de cada página, garantizando coherencia en la estética del sitio. Desde la selección de colores y fuentes hasta la disposición de los elementos.",
       },
     ],
+    projectsProcess: [
+      {
+        headline: "Conceptualización",
+        description:
+          "Definimos la idea del proyecto y los objetivos a alcanzar. Realizamos investigaciones de mercado y análisis de la competencia para identificar oportunidades y desafíos.",
+        icon: "https://www.svgrepo.com/show/475654/github-color.svg",
+      },
+      {
+        headline: "Diseño",
+        description:
+          "Creamos prototipos interactivos y diseños visuales colaborativos en tiempo real. Desde la conceptualización de la interfaz hasta la creación de wireframes y prototipos.",
+        icon: "https://www.svgrepo.com/show/475654/github-color.svg",
+      },
+      {
+        headline: "Desarrollo",
+        description:
+          "Construimos una plataforma de comercio electrónico personalizada y escalable. Implementamos funcionalidades y características específicas para el cliente.",
+        icon: "https://www.svgrepo.com/show/475654/github-color.svg",
+      },
+      {
+        headline: "Lanzamiento",
+        description:
+          "Lanzamos la plataforma y realizamos pruebas exhaustivas para garantizar su rendimiento y seguridad. Implementamos estrategias de marketing y publicidad.",
+        icon: "https://www.svgrepo.com/show/475654/github-color.svg",
+      },
+    ],
   },
   {
+    id: 2,
     projectTitle: "TourTracker",
+    projectDescriptionShort: "",
     projectDescription:
       "Plataforma interactiva para rastrear y seguir giras de artistas y bandas en todo el mundo. Los usuarios pueden descubrir conciertos, obtener información sobre fechas, lugares y comprar boletos en línea.",
     projectPictureUrl:
@@ -60,7 +100,9 @@ export const projectsData: IProjectsData[] = [
     projectInfoUrl: "#",
   },
   {
+    id: 3,
     projectTitle: "FizzFlare",
+    projectDescriptionShort: "",
     projectDescription:
       "Esta plataforma ofrece a los amantes de las burbujas una experiencia única, desde la personalización de sabores hasta la participación en eventos exclusivos.",
     projectPictureUrl:
@@ -69,7 +111,9 @@ export const projectsData: IProjectsData[] = [
     projectInfoUrl: "#",
   },
   {
+    id: 4,
     projectTitle: "CloudGuard",
+    projectDescriptionShort: "",
     projectDescription:
       "Una solución integral diseñada para mantener tus aplicaciones y datos seguros. Desde la detección de amenazas hasta la gestión de accesos, permite aprovechar al máximo los beneficios de la nube sin comprometer la seguridad.",
     projectPictureUrl:
