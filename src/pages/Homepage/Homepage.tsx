@@ -7,6 +7,7 @@ import { ProjectsCard } from "@components/ProjectsCard/ProjectsCard";
 import { CardsSection } from "@templates/CardsSection/CardsSection";
 import { TextContent } from "@templates/TextContent/TextContent";
 import { Testimonials } from "@templates/Testimonials/Testimonials";
+import FormSection from "@templates/FormSection/FormSection";
 import styles from "./Homepage.module.css";
 import { aboutData } from "@data/static/about";
 import { projectsData } from "@data/static/projects";
@@ -134,6 +135,8 @@ export const Homepage = () => {
         />
 
         <Testimonials />
+
+        <FormSection />
       </main>
       <Footer />
     </>

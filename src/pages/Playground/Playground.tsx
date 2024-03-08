@@ -112,16 +112,14 @@ export const Playground = () => {
           </div>
         </div>
         <div className={styles.projectsCard}>
-          {projectsData && (
-            <>
-              {projectsData.map((props, index) => (
-                <ProjectsCard
-                  {...props}
-                  cardDirection={index % 2 === 0 ? "normal" : "reversed"}
-                />
-              ))}
-            </>
-          )}
+          {projectsData &&
+            projectsData.map((props, index) => (
+              <ProjectsCard
+                {...props}
+                key={props.projectUrl}
+                cardDirection={index % 2 === 0 ? "normal" : "reversed"}
+              />
+            ))}
         </div>
         <div className={styles.technologiesCards}>
           {projectsData.map((project) => (
